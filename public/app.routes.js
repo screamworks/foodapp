@@ -2,6 +2,8 @@ angular.module('servproj').config(($urlRouterProvider, $stateProvider) => {
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
+
+
     .state('home', {
       url: '/',
       templateUrl: './component/home/homeTmpl.html',
@@ -12,9 +14,19 @@ angular.module('servproj').config(($urlRouterProvider, $stateProvider) => {
           .catch(err => err)
       }
     })
+
+
     .state('login', {
       url: '/login',
       templateUrl: './component/login/loginTmpl.html',
       controller: 'mainCtrl'
     })
+
+
+    .state('main', {
+      url: '/menu',
+      templateUrl: './component/menu/main.html'
+    })
+
+
 });

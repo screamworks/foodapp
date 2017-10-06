@@ -1,102 +1,56 @@
 
-
-
-
-
 <div class="homeWall">
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <div class="container-fluid">
-  <div class="menu">
-  <ul class="nav navbar-nav">
-      <li class="navColor"> about </li>
-      <li class="navColor" > login </li>
-  </ul>
+    <div class="menu">
+        <ul class="nav navbar-nav">
+            <li class="navColor"> about </li>
+            <li class="navColor" > login/register </li>
+        </ul>
+    </div>
   </div>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <div class="outerHomeTitle">
-<h1 class="homeTitle">PARMEAL</h1>
+  <h1 class="homeTitle">PARMEAL</h1>
 </div>
 
 
 <div class="homeInfo">
-<h2>Amplified Meal Prep Solutions</h2>
-<h3>Parmeal connects you with local chefs to provide daily and <br> weekly food plans to avoid  unhealthy, pricey restaurants <br> and eliminate the worry of preparing food yourself. </h3>
-<br>
-<h2>Search for Chefs in your Location</h2>
+  <h2>Amplified Meal Prep Solutions</h2>
+  <h3>Parmeal connects you with home-based chefs providing daily<br/>to  weekly meals. Avoid unhealthy restaurants and the need<br/>to prepare food, we provide authentic meals 24/7 </h3>
+  <br>
 
+
+  <h2>Search for Chefs in your Location</h2>
 <div id="wrap">
   <form action="" autocomplete="on">
   <input id="search" name="search" type="text" placeholder="Enter Zipcode or City, State"><input id="search_submit" value="Rechercher" type="submit">
   </form>
 </div>
+
+
 </div>
 
-
+<div class="registerChef">
+<h4>become a partner</h4>
+<h5>be your own boss, pick any hours, get competitive salaries, join to become a parmeal chef in your city </h5>
+</div>
 
 <!-- check if user has an auth id (meaning its the user and not the error message) -->
 <!-- if no authid, display error, else display user info -->
-<div class="jabber">
+<!-- <div class="jabber">
 <h1 ng-if="!user.authid">{{user}}</h1>
 <div ng-if="user.authid">
     <h1>{{user.authid}}</h1>
     <h1>{{user.username}}</h1>
-</div>
+</div> -->
 <!-- Go to Login View -->
-<a class="transition" ui-sref="login" ng-if="!user.authid"><span>login</span></a>
+<!-- <a class="transition" ui-sref="login" ng-if="!user.authid"><span>login</span></a> -->
 <!-- Logout your user, if not user, button won't display -->
-<a class="transition" href="/auth/logout" ng-if="user.authid"><span>logout!</span></a>
-</div>
+<!-- <a class="transition" href="/auth/logout" ng-if="user.authid"><span>logout!</span></a>
+</div> -->
 
 
 
