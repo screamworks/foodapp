@@ -1,1 +1,1 @@
-angular.module('servproj', ['ui.router']);
+angular.module('servproj', ['ui.router', 'ngFileUpload']);

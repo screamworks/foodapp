@@ -10,6 +10,20 @@
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-storage.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBjE3ZiBJmwDMwv6dCpl9ko3rhkfUgkzco",
+        authDomain: "servproj-870fc.firebaseapp.com",
+        databaseURL: "https://servproj-870fc.firebaseio.com",
+        projectId: "servproj-870fc",
+        storageBucket: "servproj-870fc.appspot.com",
+        messagingSenderId: "309956686395"
+      };
+      firebase.initializeApp(config);
+    </script>
 
 
 </head>
@@ -22,5 +36,6 @@
 <script src="./app.routes.js"></script>
 <script src="./component/login/mainCtrl.js"></script>
 <script src="./component/login/mainSrvc.js"></script>
+<script src="./ng-file-upload.js"></script>
 <script src="./component/home/homeCtrl.js"></script>
 </html>

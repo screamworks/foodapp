@@ -7,5 +7,12 @@ angular.module('servproj').service('mainSrvc', function($http) {
       console.log(user)
       return $http.post('/api/user/create', user);
     }
-    
+
+
+
+
+
+
+
+
 });

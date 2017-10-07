@@ -6,4 +6,5 @@ angular.module('servproj').controller('homeCtrl', function($scope, user, mainSrv
     $scope.user = user.data && user.data.err ? user.data.err : user;
 
 
+
 })

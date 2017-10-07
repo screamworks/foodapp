@@ -5,7 +5,9 @@
   </a>
 </div> -->
 <!-- / Begin Body -->
-<div class='swanky'>
+<div ng-controller="mainCtrl">
+
+  <div class='swanky'>
   <!-- / Introduction Block -->
   <div class='swanky_title'>
     <h1>Featured Parmeals</h1>
@@ -128,6 +130,12 @@
 </div>
 
 
+<form name="form">
+            <img style="width: 300px;" ngf-thumbnail="image || '../assets/img/placeholder.png'">
+            <button name="image" ngf-select ng-model="image">Upload image</button>
+            <button ng-click="submit(image)">Submit</button>
+        </form>
+
 
 
 <div class="container">
@@ -150,4 +158,6 @@
 
   <div class="gap"></div>
   <div class="gap"></div>
+</div>
+
 </div>
