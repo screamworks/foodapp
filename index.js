@@ -9,9 +9,9 @@ const passport = require('passport');
 const Auth0Strategy = require('passport-auth0');
 
 // const config = require('../config');
-const { secret } = require('./config').session;
-const { dbUser, database } = require('./config').db;
-const { domain, clientID, clientSecret } = require('./config').auth0;
+const { secret } = require('./server/config').session;
+const { dbUser, database } = require('./server/config').db;
+const { domain, clientID, clientSecret } = require('./server/config').auth0;
 
 // define port
 const port = 3000;
@@ -33,7 +33,7 @@ massive(connectionString).then(db => app.set('db', db));
 // setting up express sessions
 // secret: config.session.secret;
 app.use(session({
-    secret: 'littleSecret',
+    secret,
     resave: true,
     saveUninitialized: true
 }));
@@ -84,20 +84,32 @@ passport.use(new Auth0Strategy({
 
  // General Endpoints
 app.get('/api/test', (req, res, next) => {
-    app.get('db').users.find({}).then(response => {
+       const db = req.app.get('db');
+    db.users.find({}).then(response => {
         res.json(response);
-    });
+    })
+    .catch(err => console.log(err));
 });
 
+
+app.put('/api/users', (req,res,next) => {
+  const db = req.app.get('db');
+  console.log(req.session.passport.user.authid);
+  console.log(req.body)
+  db.updateUser([req.session.passport.user.authid, req.body.first, req.body.last, req.body.email]).then((user)=>{
+    console.log(req.session);
+    res.json(user);
+  }).catch(error => console.log('ERROR:', error))
+})
 
 // auth endpoints
 
 // initial endpoint to fire off login
-app.get('/auth', passport.authenticate('auth0'));
+app.get('/auth', passport.authenticate('auth0', {scope: 'openid profile'}));
 
 // redirect to home and use the resolve to catch the user
 app.get('/auth/callback',
-    passport.authenticate('auth0', { successRedirect: '/' }), (req, res) => {
+    passport.authenticate('auth0', { successRedirect: '/', failureRedirect: '/login' }), (req, res) => {
         res.status(200).json(req.user);
 });
 
