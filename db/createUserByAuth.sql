@@ -1,1 +1,4 @@
-INSERT INTO users (name, email, credit_card, past_orders, current_orders) VALUES ($1, $2, $3, $4, $5, $6) RETURNING name, email, credit_card, past_orders, current_orders, reviews_written;
+INSERT INTO users (name, authid) VALUES ($1, $2)  RETURNING *;
+
+-- meals_made, past_orders, current_orders, authid, reviews_written, upcoming orders
+-- $3, $4, $5, $6, $7, $8

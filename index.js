@@ -51,14 +51,14 @@ passport.use(new Auth0Strategy({
     callbackURL:  '/auth/callback'
    }, (accessToken, refreshToken, extraParams, profile, done) => {
      //Find user in database
-     console.log(profile.id);
+     console.log(profile);
      const db = app.get('db');
      // .then means this is a promise
-     db.getUserByAuthId([profile.id]).then((user, err) => {
+     db.getUserByAuthId([profile._json.sub]).then((user, err) => {
          console.log('INITIAL: ', user);
        if (!user[0]) { //if there isn't a user, we'll create one!
-         console.log('CREATING USER');
-         db.createUserByAuth([profile.displayName, profile.id]).then((user, err) => {
+         console.log('CREATING USER:');
+         db.createUserByAuth([profile.displayName, profile._json.sub]).then((user, err) => {
            console.log('USER CREATED', user[0]);
            return done(err, user[0]); // GOES TO SERIALIZE USER
          })

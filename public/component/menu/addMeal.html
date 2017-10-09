@@ -1,0 +1,55 @@
+<div ng-controller="mainCtrl">
+
+<div class="addMeal">
+
+<h1>Add Meals</h1>
+
+
+
+
+      <label><b>Your meal's name:</b></label>
+      <input type="username" placeholder="Meal Name" name="uname" required>
+      <br>
+
+      <label><b>Cost per Meal</b></label>
+      <input type="password" placeholder="Enter Price" name="price" required>
+      <br>
+      <label><b>Description</b></label>
+      <input type="password" placeholder="About this meal" name="price" required>
+      <br>
+      <label><b>Vegan</b></label>
+      <input type="checkbox" placeholder="Enter Price" name="price" required>
+      <label><b>Veg</b></label>
+      <input type="checkbox" placeholder="Enter Price" name="price" required>
+      <label><b>Non-Veg</b></label>
+      <input type="checkbox" placeholder="Enter Price" name="price" required>
+      <label><b>Gluten-Free</b></label>
+      <input type="checkbox" placeholder="Enter Price" name="price" required>
+      <label><b>Contains Soy</b></label>
+      <input type="checkbox" placeholder="Enter Price" name="price" required>
+      <br>
+      <label><b>Contains Nuts</b></label>
+      <input type="checkbox" placeholder="Enter Price" name="price" required>
+      <br>
+
+        <label><b>Schedule</b></label>
+      <select>
+      <option>One-Time</option>
+      <option>Day</option>
+      <option>Bi-Weekly</option>
+      <option>Weekly</option>
+      </select>
+      <br>
+
+
+  <form name="form">
+              <img style="width: 300px;" ngf-thumbnail="image || '../assets/img/placeholder.png'">
+              <button name="image" ngf-select ng-model="image">Upload image</button>
+              <button ng-click="submit(image)">Submit</button>
+          </form>
+
+  <button type="submit">Publish to public</button>
+
+</div>
+
+</div>

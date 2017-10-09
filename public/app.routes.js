@@ -28,5 +28,10 @@ angular.module('servproj').config(($urlRouterProvider, $stateProvider) => {
       templateUrl: './component/menu/main.html'
     })
 
+    .state('addMeal', {
+      url: '/addmeal',
+      templateUrl: './component/menu/addMeal.html',
+      controller: 'mainCtrl'
+    })
 
 });
