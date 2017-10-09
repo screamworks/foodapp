@@ -8,32 +8,32 @@
 
 
       <label><b>Your meal's name:</b></label>
-      <input type="username" placeholder="Meal Name" name="uname" required>
+      <input type="username" placeholder="Meal Name" name="uname" ng-model="mealName"required>
       <br>
 
       <label><b>Cost per Meal</b></label>
-      <input type="password" placeholder="Enter Price" name="price" required>
+      <input type="username" placeholder="Enter Price" name="price" ng-model="mealCost" required>
       <br>
       <label><b>Description</b></label>
-      <input type="password" placeholder="About this meal" name="price" required>
+      <input type="username" placeholder="About this meal" name="price" ng-model="description" required>
       <br>
       <label><b>Vegan</b></label>
-      <input type="checkbox" placeholder="Enter Price" name="price" required>
+      <input type="checkbox" placeholder="Enter Price" name="price" ng-model="vegan" required>
       <label><b>Veg</b></label>
-      <input type="checkbox" placeholder="Enter Price" name="price" required>
+      <input type="checkbox" placeholder="Enter Price" name="price" ng-model="vegetarian" required>
       <label><b>Non-Veg</b></label>
-      <input type="checkbox" placeholder="Enter Price" name="price" required>
+      <input type="checkbox" placeholder="Enter Price" name="price" ng-model="nonVeg" required>
       <label><b>Gluten-Free</b></label>
-      <input type="checkbox" placeholder="Enter Price" name="price" required>
+      <input type="checkbox" placeholder="Enter Price" name="price" ng-model="glutenFree" required>
       <label><b>Contains Soy</b></label>
-      <input type="checkbox" placeholder="Enter Price" name="price" required>
+      <input type="checkbox" placeholder="Enter Price" name="price" ng-model="soy" required>
       <br>
       <label><b>Contains Nuts</b></label>
-      <input type="checkbox" placeholder="Enter Price" name="price" required>
+      <input type="checkbox" placeholder="Enter Price" name="price" ng-model="nuts" required>
       <br>
 
         <label><b>Schedule</b></label>
-      <select>
+      <select ng-model="schedule">
       <option>One-Time</option>
       <option>Day</option>
       <option>Bi-Weekly</option>
@@ -42,13 +42,13 @@
       <br>
 
 
-  <form name="form">
+  <form name="form" ng-model="image">
               <img style="width: 300px;" ngf-thumbnail="image || '../assets/img/placeholder.png'">
               <button name="image" ngf-select ng-model="image">Upload image</button>
-              <button ng-click="submit(image)">Submit</button>
-          </form>
+              <button ng-click="submit(mealName, price, mealDesc, vegan, veg, nonveg, glutenFree, soy, nuts, schedule, image)">Submit</button>
+        </form>
 
-  <button type="submit">Publish to public</button>
+
 
 </div>
 

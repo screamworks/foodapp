@@ -109,7 +109,7 @@ app.get('/auth', passport.authenticate('auth0', {scope: 'openid profile'}));
 
 // redirect to home and use the resolve to catch the user
 app.get('/auth/callback',
-    passport.authenticate('auth0', { successRedirect: '/', failureRedirect: '/login' }), (req, res) => {
+    passport.authenticate('auth0', { successRedirect: '/#/menu', failureRedirect: '/login' }), (req, res) => {
         res.status(200).json(req.user);
 });
 
@@ -120,11 +120,15 @@ app.get('/auth/me', (req, res) => {
     res.status(200).json(req.user);
 });
 
+
 // remove user from session
 app.get('/auth/logout', (req, res) => {
     req.logout();
     res.redirect('/');
 });
+
+// app.post('/addMeal', mainCtrl.uploadImages);
+
 
 // listen on port
 app.listen(port, ()=> {
