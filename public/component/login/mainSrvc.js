@@ -41,8 +41,19 @@ angular.module('servproj').service('mainSrvc', function($http) {
       return $http.post('/api/user/create', user);
     }
 
+    this.showUser = () => {
+      console.log(user)
+      return $http.get('/auth/me')
+    }
 
 
+    this.getMeals = () => {
+      console.log('service');
+      return $http.get('/api/menu').then(response => {
+      console.log(response.data)
+        return response;
+      })
+    }
 
 
 

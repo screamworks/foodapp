@@ -33,10 +33,13 @@
           </div>
         </div>
         <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/cp.png'>
-        Vegetarian
+        Add review banner as a feature
       </a>
     </div>
   </div>
+
+
+
   <!-- /////////// Begin Dropdown //////////// -->
 
 
@@ -130,9 +133,35 @@
 </div>
 
 
+
 <!-- <form name="form">
             <img style="width: 300px;" ngf-thumbnail="image || '../assets/img/placeholder.png'">
             <button name="image" ngf-select ng-model="image">Upload image</button>
             <button ng-click="submit(image)">Submit</button>
         </form> -->
+
+<!--- how to display the data (meals) from the SQL database in postico  play -->
+
+        <h2> oaffeoh</h2>
+        <h3> fheiafhaif</h3>
+<!-- not working -->
+        <h1 ng-if="!user.authid">{{user}}</h1>
+        <div ng-if="user.authid">
+            <h1>{{user.authid}}</h1>
+            <h1>{{user.username}}</h1>
+        </div>
+
+      <div ng-repeat="food in meals">
+          <h2>{{ food.mealname }}</h2>
+          <h4>{{ food.description}}</h4>
+          <h6>{{ food.image}}</h6>
+          <h6>{{food.vegan}}</h6>
+
+      </div>
+
+
+
+
+
+
 </div>

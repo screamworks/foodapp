@@ -136,6 +136,17 @@ app.post('/addMeal', (req, res) => {
   });
 
 
+app.get('/api/menu', (req,res) => {
+  console.log('endpoint')
+  const db = req.app.get('db');
+
+  db.getMeals(req.body)
+  .then(response => {
+  console.log(response)
+  return res.json(response)
+})
+})
+
 // listen on port
 app.listen(port, ()=> {
     console.log(`LISTENING ON PORT: ${port}`);

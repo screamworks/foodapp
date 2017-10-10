@@ -2,8 +2,6 @@ angular.module('servproj').config(($urlRouterProvider, $stateProvider) => {
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
-
-
     .state('home', {
       url: '/',
       templateUrl: './component/home/homeTmpl.html',
@@ -25,7 +23,13 @@ angular.module('servproj').config(($urlRouterProvider, $stateProvider) => {
 
     .state('main', {
       url: '/menu',
-      templateUrl: './component/menu/main.html'
+      templateUrl: './component/menu/main.html',
+      resolve: {
+          user: (mainSrvc) => {
+            mainSrvc.getUser()
+            .then(response => {return response.data})
+          }
+      }
     })
 
     .state('addMeal', {
