@@ -127,7 +127,13 @@ app.get('/auth/logout', (req, res) => {
     res.redirect('/');
 });
 
-// app.post('/addMeal', mainCtrl.uploadImages);
+// const mainCtrl = require('./component/login/mainCtrl.js');
+app.post('/addMeal', (req, res) => {
+    console.log(req.body)
+    req.app
+      .get('db')
+      .upload_pic(req.body)
+  });
 
 
 // listen on port

@@ -2,7 +2,7 @@ angular.module('servproj').service('mainSrvc', function($http) {
     // you can use this function for every request to get user.
     // don't write new versions of this in every service, keep it DRY
 
-    this.createMeal = (mealName, price, mealDesc, vegan, veg, nonveg, glutenFree, soy, nuts, schedule, image) => {
+    this.createMeal = (mealName, mealCost, description, vegan, vegetarian, nonVeg, glutenFree, soy, nuts, schedule, image) => {
       console.log(image)
     const storageRef = firebase.storage().ref();
     const uploadTask = storageRef.child('images/' + image.name).put(image);
@@ -23,11 +23,14 @@ angular.module('servproj').service('mainSrvc', function($http) {
 
       const downloadURL = uploadTask.snapshot.downloadURL;
 
-      let uploadParams = [mealName, price, mealDesc, vegan, veg, nonveg, glutenFree, soy, nuts, schedule, image]
-          console.log(downloadURL)
-      $scope.downloadURL = downloadURL
+      let uploadParams = [mealName, mealCost, description, vegan, vegetarian, nonVeg, glutenFree, soy, nuts, schedule, image]
+
+
+          // testing
+            this.downloadURL = downloadURL
+      // $scope.downloadURL = downloadURL
       console.log(downloadURL, "done");
-      return $http.post('/meals', uploadParams)
+      return $http.post('/addmeal', uploadParams)
     });
     }
 
