@@ -23,7 +23,7 @@ angular.module('servproj').service('mainSrvc', function($http) {
 
       const downloadURL = uploadTask.snapshot.downloadURL;
 
-      let uploadParams = [mealName, mealCost, description, vegan, vegetarian, nonVeg, glutenFree, soy, nuts, schedule, image]
+      let uploadParams = [mealName, mealCost, description, vegan, vegetarian, nonVeg, glutenFree, soy, nuts, schedule, downloadURL]
 
 
           // testing
