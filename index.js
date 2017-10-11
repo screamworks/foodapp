@@ -153,12 +153,8 @@ app.get('/api/menu', (req,res) => {
 app.put('/api/updatemeal', (req, res) => {
   console.log("index.js update meal body: ",req.body)
   const db = req.app.get('db');
-  var meal = [];
-  for (var key in req.body){
-    meal.push(req.body[key])
-  }
-  console.log("meal array: ", meal);
-  db.updateMeal(meal)
+
+  db.updateMeal(req.body)
   .then(response => {
 
   console.log("hello pt4")

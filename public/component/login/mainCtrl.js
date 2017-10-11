@@ -8,10 +8,15 @@ $scope.id = $stateParams.id
 
 $scope.getCurrentMeal = function(id) {
   return $http.get('/current/meal/?id='+id).then(function(res) {
-    $scope.currentMeal = res.data[0];
+    // $scope.currentMeal = res.data[0];
+    return res.data[0];
   })
 }
-$scope.getCurrentMeal($scope.id);
+$scope.getCurrentMeal($scope.id).then(response => {
+  console.log(response)
+  $scope.currentMeal = response;
+})
+
 
 //Somehow get access to the user ID
 
@@ -19,7 +24,7 @@ $scope.getCurrentMeal($scope.id);
 // Get access to the user id
 
 
-
+console.log($scope.currentMeal);
 // let userInfo = user.authid
 
 //Controllers
@@ -34,7 +39,6 @@ $scope.getMeals  =
 //   }
 //   meals.id
 // };
-
 
 
 
@@ -85,11 +89,11 @@ const getMeals = (req,res) => {
 
 
 // test code - control
-  $scope.updatemeal = (newMeal) => {
-    const id = $stateParams.id
-    newMeal.id = id;
-    console.log("newMeal with id: ", newMeal)
-    mainSrvc.updatemeal(newMeal)
+  $scope.updatemeal = (updatedMeal) => {
+    // const id = $stateParams.id
+    // updatedMeal.id = id;
+    console.log("newMeal with id: ", updatedMeal)
+    mainSrvc.updatemeal(updatedMeal)
   }
 
 

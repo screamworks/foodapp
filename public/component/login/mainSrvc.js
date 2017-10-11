@@ -49,13 +49,9 @@ angular.module('servproj').service('mainSrvc', function($http) {
     }
 
 
-    this.updatemeal = function(newMeal){
-      console.log("mainsrv newMeal: ", newMeal)
-      return $http.put('/api/updatemeal/', newMeal)
-        .then(response => {
-          console.log("mainsrv update meal response: ", response)
-          return response
-        })
+    this.updatemeal = function(updatedmeal){
+      console.log("mainsrv newMeal: ", updatedmeal)
+      return $http.put('/api/updatemeal/', updatedmeal)
     }
 
 
