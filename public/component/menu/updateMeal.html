@@ -1,0 +1,39 @@
+
+<h1>Update/Modify your Meal</h1>
+
+      <label><b>Your meal's name:</b></label>
+      <input type="username" placeholder="Meal Name" name="uname" ng-model="mealName"required>
+      <br>
+
+      <label><b>Cost per Meal</b></label>
+      <input type="username" placeholder="Enter Price" name="price" ng-model="mealCost" required>
+      <br>
+      <label><b>Description</b></label>
+      <input type="username" placeholder="About this meal" name="price" ng-model="description" required>
+      <br>
+      <label><b>Vegan</b></label>
+      <input type="checkbox" placeholder="Enter Price" name="price" ng-model="vegan" required>
+      <label><b>Veg</b></label>
+      <input type="checkbox" placeholder="Enter Price" name="price" ng-model="vegetarian" required>
+      <label><b>Non-Veg</b></label>
+      <input type="checkbox" placeholder="Enter Price" name="price" ng-model="nonVeg" required>
+      <label><b>Gluten-Free</b></label>
+      <input type="checkbox" placeholder="Enter Price" name="price" ng-model="glutenFree" required>
+      <label><b>Contains Soy</b></label>
+      <input type="checkbox" placeholder="Enter Price" name="price" ng-model="soy" required>
+      <br>
+      <label><b>Contains Nuts</b></label>
+      <input type="checkbox" placeholder="Enter Price" name="price" ng-model="nuts" required>
+      <br>
+
+        <label><b>Schedule</b></label>
+      <select ng-model="schedule">
+      <option>One-Time</option>
+      <option>Day</option>
+      <option>Bi-Weekly</option>
+      <option>Weekly</option>
+      </select>
+      <br>
+
+<input type="username" name="what do i put here to modify a specific meal" value="">
+<button ng-click="updatemeal()">Submit</button>

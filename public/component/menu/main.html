@@ -154,8 +154,8 @@
       <div ng-repeat="food in meals">
           <h2>{{ food.mealname }}</h2>
           <h4>{{ food.description}}</h4>
-          <h6>{{ food.image}}</h6>
-          <h6>{{food.vegan}}</h6>
+          <img ng-src="{{ food.image }}">
+          <h6> Vegan: {{food.vegan}}</h6>
 
       </div>
 

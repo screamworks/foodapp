@@ -142,10 +142,46 @@ app.get('/api/menu', (req,res) => {
 
   db.getMeals(req.body)
   .then(response => {
-  console.log(response)
+
+  // console.log(response)
   return res.json(response)
 })
 })
+
+
+
+app.put('/api/updatemeal', (req, res) => {
+  // console.log(req.body)
+  const db = req.app.get('db');
+  var meal = [];
+  for (var key in req.body){
+    meal.push(req.body[key])
+  }
+  console.log(meal);
+  db.updateMeal(meal)
+  .then(response => {
+
+  console.log("hello pt4")
+  res.send(response);
+    })
+})
+
+///////////////////////////////////
+
+app.get('/current/meal/', (req, res) => {
+  const db = req.app.get('db');
+
+  db.getCurrentMeal(req.query.id)
+  .then(response => {
+
+  // console.log(response)
+  return res.json(response)
+})
+})
+
+//////////////////////////////////
+
+
 
 // listen on port
 app.listen(port, ()=> {
