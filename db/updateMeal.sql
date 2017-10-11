@@ -1,3 +1,3 @@
 UPDATE addmeal
-SET mealname = $2, mealcost = $3, description= $4, vegan= $5, vegetarian= $6, nonveg= $7, glutenfree= $8, soy= $9, nuts= $10, schedule= $11, image= $12
-WHERE id = $1;
+SET mealname = $1, mealcost = $2, description= $3, vegan= $4, vegetarian= $5, nonveg= $6, glutenfree= $7, soy= $8, nuts= $9, schedule= $10, image= $11
+WHERE id = $12;

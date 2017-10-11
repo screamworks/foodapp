@@ -151,13 +151,13 @@ app.get('/api/menu', (req,res) => {
 
 
 app.put('/api/updatemeal', (req, res) => {
-  // console.log(req.body)
+  console.log("index.js update meal body: ",req.body)
   const db = req.app.get('db');
   var meal = [];
   for (var key in req.body){
     meal.push(req.body[key])
   }
-  console.log(meal);
+  console.log("meal array: ", meal);
   db.updateMeal(meal)
   .then(response => {
 

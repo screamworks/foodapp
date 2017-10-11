@@ -39,7 +39,7 @@ angular.module('servproj').config(($urlRouterProvider, $stateProvider) => {
     })
 
     .state('updatemeal', {
-      url: '/updatemeal',
+      url: '/updatemeal/:id',
       templateUrl: './component/menu/updatemeal.html',
       controller: 'mainCtrl'
     })

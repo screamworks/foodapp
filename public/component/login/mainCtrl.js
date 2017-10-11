@@ -1,12 +1,13 @@
-angular.module('servproj').controller('mainCtrl', function (mainSrvc, $interval, $scope, $http){
+angular.module('servproj').controller('mainCtrl', function (mainSrvc, $interval, $scope, $http, $stateParams){
 
+// for stateParams - app.routes.js has id on its updateMeal state and ui-sref on view on main.html
 
-$scope.id = 4 //$stateParam Value;
+$scope.id = $stateParams.id
+
+ /////////////////$stateParam Value;
 
 $scope.getCurrentMeal = function(id) {
-  console.log('fired');
   return $http.get('/current/meal/?id='+id).then(function(res) {
-    console.log(res);
     $scope.currentMeal = res.data[0];
   })
 }
@@ -24,9 +25,15 @@ $scope.getCurrentMeal($scope.id);
 //Controllers
 $scope.getMeals  =
   mainSrvc.getMeals().then(response => {
-    console.log(response.data);
     $scope.meals = response.data
   })
+
+// for(var i = 0; i < meals.length; i++){
+//   if(meals[i].id === $stateParams.id){
+//     $scope.updateMeal = meals[i]
+//   }
+//   meals.id
+// };
 
 
 
@@ -49,11 +56,9 @@ $scope.getMeals  =
 
 // mainCtrl
 const getMeals = (req,res) => {
-  console.log(req.body)
   const db = req.app.get('db');
     db.getMeals(req.body)
     .then(response => {
-    console.log(response)
     return res.json(response)
 })
 }
@@ -80,24 +85,13 @@ const getMeals = (req,res) => {
 
 
 // test code - control
-  $scope.updatemeal = () => {
-    var currentMeal = $scope.currentMeal;
-    var meal = {
-      mealName: $scope.mealName,
-      mealCost: $scope.mealCost || null,
-      description: $scope.description || null,
-      vegan: $scope.vegan || null,
-      vegetarian: $scope.vegetarian || null,
-      nonveg: $scope.nonveg || null,
-      gluetenfree: $scope.glutenfree || null,
-      soy: $scope.soy || null,
-      nuts: $scope.nuts || null,
-      schedule: $scope.schedule || null,
-      image: $scope.image || null,
-    };
-    // console.log(meal)
-    mainSrvc.updatemeal(meal, currentMeal)
+  $scope.updatemeal = (newMeal) => {
+    const id = $stateParams.id
+    newMeal.id = id;
+    console.log("newMeal with id: ", newMeal)
+    mainSrvc.updatemeal(newMeal)
   }
+
 
 // mainSrvce - test Code
   // this.updateMeal = (id) => {

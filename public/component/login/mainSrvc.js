@@ -26,9 +26,8 @@ angular.module('servproj').service('mainSrvc', function($http) {
       let uploadParams = [mealName, mealCost, description, vegan, vegetarian, nonVeg, glutenFree, soy, nuts, schedule, downloadURL]
 
 
-          // testing
-            this.downloadURL = downloadURL
-      // $scope.downloadURL = downloadURL
+
+      this.downloadURL = downloadURL
       console.log(downloadURL, "done");
       return $http.post('/addmeal', uploadParams)
     });
@@ -44,46 +43,55 @@ angular.module('servproj').service('mainSrvc', function($http) {
 
 
     this.getMeals = () => {
-      console.log('service');
       return $http.get('/api/menu').then(response => {
-      console.log(response.data)
         return response;
       })
     }
 
 
-    this.updatemeal = (meal, currentMeal) => {
-      console.log(meal);
-        id = currentMeal.id;
-        mealName = meal.mealName;
-        if(!mealName){ mealName = currentMeal.mealname;}
-        mealCost = meal.mealCost;
-        if(!mealCost){ mealCost = currentMeal.mealcost;}
-        mealDesc = meal.description;
-        if(!mealDesc){ mealDesc = currentMeal.description;}
-        vegan =  meal.vegan;
-        if(!vegan){ vegan = currentMeal.vegan}
-        vegetarian = meal.vegetarian;
-        if(!vegetarian ){ vegetarian = currentMeal.vegetarian;}
-        nonVeg = meal.nonVeg;
-        if(!nonVeg){ nonVeg = currentMeal.nonveg;}
-        glutenFree = meal.glutenfree;
-        if(!glutenFree){ glutenFree = currentMeal.glutenfree;}
-        soy = meal.soy;
-        if(!soy){ soy = currentMeal.soy;}
-        nuts = meal.nuts;
-        if(!nuts){ nuts = currentMeal.nuts;}
-        schedule = meal.schedule;
-        if(!schedule){ schedule = currentMeal.schedule;}
-        image =  meal.image;
-        if(!image){ image = currentMeal.image;}
-
-      return $http.put('/api/updatemeal', { id, mealName, mealCost, mealDesc, vegan, vegetarian, nonVeg, glutenFree, soy, nuts, schedule, image  }).then(response => {
-        console.log(response)
-        return response
-      })
+    this.updatemeal = function(newMeal){
+      console.log("mainsrv newMeal: ", newMeal)
+      return $http.put('/api/updatemeal/', newMeal)
+        .then(response => {
+          console.log("mainsrv update meal response: ", response)
+          return response
+        })
     }
 
+
+
+    // mealName = meal.mealName;
+    // if(!mealName){ mealName = newMeal.mealname;}
+    //
+    // mealCost = meal.mealCost;
+    // if(!mealCost){ mealCost = newMeal.mealcost;}
+    //
+    // mealDesc = meal.description;
+    // if(!mealDesc){ mealDesc = newMeal.description;}
+    //
+    // vegan =  meal.vegan;
+    // if(!vegan){ vegan = newMeal.vegan}
+    //
+    // vegetarian = meal.vegetarian;
+    // if(!vegetarian ){ vegetarian = newMeal.vegetarian;}
+    //
+    // nonVeg = meal.nonVeg;
+    // if(!nonVeg){ nonVeg = newMeal.nonveg;}
+    //
+    // glutenFree = meal.glutenfree;
+    // if(!glutenFree){ glutenFree = newMeal.glutenfree;}
+    //
+    // soy = meal.soy;
+    // if(!soy){ soy = newMeal.soy;}
+    //
+    // nuts = meal.nuts;
+    // if(!nuts){ nuts = newMeal.nuts;}
+    //
+    // schedule = meal.schedule;
+    // if(!schedule){ schedule = newMeal.schedule;}
+    //
+    // image =  meal.image;
+    // if(!image){ image = newMeal.image;}
 
 
 });

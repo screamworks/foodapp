@@ -140,23 +140,27 @@
             <button ng-click="submit(image)">Submit</button>
         </form> -->
 
-<!--- how to display the data (meals) from the SQL database in postico  play -->
+
 
         <h2> oaffeoh</h2>
         <h3> fheiafhaif</h3>
+
 <!-- not working -->
         <h1 ng-if="!user.authid">{{user}}</h1>
         <div ng-if="user.authid">
             <h1>{{user.authid}}</h1>
             <h1>{{user.username}}</h1>
         </div>
+<!--- username needs to show above ^^^^ --->
 
-      <div ng-repeat="food in meals">
-          <h2>{{ food.mealname }}</h2>
-          <h4>{{ food.description}}</h4>
-          <img ng-src="{{ food.image }}">
-          <h6> Vegan: {{food.vegan}}</h6>
+<!--- how to display the data (meals) from the SQL database in postico  play -->
 
+      <div ng-repeat="food in meals track by food.id" > <!--- need to track by the meals id --->
+        <h2>{{ food.mealname }}</h2>
+        <h4>{{ food.description}}</h4>
+        <img ng-src="{{ food.image }}">
+        <h6> Vegan: {{food.vegan}}</h6>
+        <button ui-sref="updatemeal({ id: food.id })">Update Meal</button>
       </div>
 
 
