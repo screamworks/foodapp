@@ -98,6 +98,10 @@ const getMeals = (req,res) => {
 
 
 
+$scope.deletePrepMeal = (mealIwantToDelete) => { // this mealIwantTOdelete is in mainCtrl called currentMeal.id parameter of func
+  console.log(mealIwantToDelete)
+  mainSrvc.deletePrepMeal(mealIwantToDelete)
+}
 
 // mainSrvce - test Code
   // this.updateMeal = (id) => {

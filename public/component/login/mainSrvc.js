@@ -54,6 +54,16 @@ angular.module('servproj').service('mainSrvc', function($http) {
       return $http.put('/api/updatemeal/', updatedmeal)
     }
 
+    // this.deletePrepMeal = (mealIwantToDelete) => {
+    //   console.log('deleting a meal, from mainService, horrah!', mealIwantToDelete)
+    //   return $http.delete('/api/deletePrepMeal', mealIwantToDelete)
+    // }
+
+    this.deletePrepMeal = (current) => { // from mainCtrl IwantoDeleteMeal and currentmeal.id (nickname of CORE name: currentmeal.id)
+      console.log('deleting a meal, from mainService, horrah!', current)
+      return $http.delete('/api/deletePrepMeal/'+ current)
+    }
+
 
 
     // mealName = meal.mealName;

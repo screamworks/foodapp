@@ -162,7 +162,7 @@ app.put('/api/updatemeal', (req, res) => {
     })
 })
 
-///////////////////////////////////
+/
 
 app.get('/current/meal/', (req, res) => {
   const db = req.app.get('db');
@@ -175,7 +175,15 @@ app.get('/current/meal/', (req, res) => {
 })
 })
 
-//////////////////////////////////
+app.delete('/api/deletePrepMeal/:id', (req, res) => {
+  const db = req.app.get('db');
+console.log('hello from indexJS')
+  db.deletePrepMeal({id: req.params.id})
+  .then(response => {
+    console.log('im back from hawaii')
+      return res.json(response)
+})
+})
 
 
 

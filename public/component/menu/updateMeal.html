@@ -1,5 +1,5 @@
 
-<h1>Update/Modify your Meal</h1>
+<h1>Edit Meal</h1>
  <form>
       <label><b>Your meal's name:</b></label>
       <input type="username" placeholder="Meal Name" name="uname" ng-model="currentMeal.mealname"required>
@@ -38,3 +38,16 @@
       <button name="image" ngf-select="image" ng-model="currentMeal.image">Upload image</button>
       <button ng-click="updatemeal(currentMeal)">Submit</button>
     </form>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1> Another crud operation...joy</h1>
+
+<h1>Delete Prepared Meal</h1>
+<img style="width: 300px;" ngf-thumbnail="currentMeal.image">
+<button ng-click="deletePrepMeal(currentMeal.id)">Submit</button>
