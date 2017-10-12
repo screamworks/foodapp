@@ -46,5 +46,11 @@ angular.module('servproj').config(($urlRouterProvider, $stateProvider) => {
       controller: 'mainCtrl'
     })
 
+    .state('cart', {
+      url: '/cart',
+      templateUrl: './component/cart/cart.html',
+      controller: 'cartCtrl'
+    })
+
 
 });
