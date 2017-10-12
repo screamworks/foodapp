@@ -9,7 +9,9 @@ angular.module('servproj').config(($urlRouterProvider, $stateProvider) => {
       resolve: {
         user: mainSrvc => mainSrvc.getUser()
           .then(response => response.data)
-          .catch(err => err)
+          .catch(err =>
+            console.log(err)
+          )
       }
     })
 

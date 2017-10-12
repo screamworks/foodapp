@@ -12,10 +12,12 @@ $scope.getCurrentMeal = function(id) {
     return res.data[0];
   })
 }
+if ($scope.id){
 $scope.getCurrentMeal($scope.id).then(response => {
   console.log(response)
   $scope.currentMeal = response;
 })
+}
 
 
 //Somehow get access to the user ID
@@ -60,13 +62,7 @@ $scope.getMeals  =
 // app.get('/api/meals', mainCtrl.getMeals)
 
 // mainCtrl
-const getMeals = (req,res) => {
-  const db = req.app.get('db');
-    db.getMeals(req.body)
-    .then(response => {
-    return res.json(response)
-})
-}
+
 
 // DB
 // $interval(()=>{

@@ -51,9 +51,10 @@ passport.use(new Auth0Strategy({
     callbackURL:  '/auth/callback'
    }, (accessToken, refreshToken, extraParams, profile, done) => {
      //Find user in database
-     console.log(profile);
+     console.log(profile, 'strategy');
      const db = app.get('db');
      // .then means this is a promise
+
      db.getUserByAuthId([profile._json.sub]).then((user, err) => {
          console.log('INITIAL: ', user);
        if (!user[0]) { //if there isn't a user, we'll create one!
@@ -183,6 +184,8 @@ console.log('hello from indexJS')
       return res.json(response)
 })
 })
+
+
 
 
 
