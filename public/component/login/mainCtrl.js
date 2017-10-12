@@ -97,6 +97,8 @@ const getMeals = (req,res) => {
   }
 
 
+
+
 // mainSrvce - test Code
   // this.updateMeal = (id) => {
   //   return $http.put('/api/').then(response => {
@@ -127,6 +129,32 @@ const getMeals = (req,res) => {
 //db
 
 // updateMeal.sql = SELECT  * FROM addmeal WHERE id = $1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
