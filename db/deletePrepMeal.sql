@@ -1,1 +1,1 @@
-DELETE FROM addmeal WHERE id = ${id};
+DELETE FROM addmeal WHERE id = ${id} RETURNING *;
