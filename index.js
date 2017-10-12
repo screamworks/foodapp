@@ -137,7 +137,6 @@ app.post('/addMeal', (req, res) => {
 
 
 app.get('/api/menu', (req,res) => {
-  console.log('endpoint')
   const db = req.app.get('db');
 
   db.getMeals(req.body)
@@ -162,7 +161,7 @@ app.put('/api/updatemeal', (req, res) => {
     })
 })
 
-/
+
 
 app.get('/current/meal/', (req, res) => {
   const db = req.app.get('db');

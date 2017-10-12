@@ -49,6 +49,5 @@
 <h1> Another crud operation...joy</h1>
 
 <h1>Delete Prepared Meal</h1>
-<img style="width: 300px;" ngf-thumbnail="currentMeal.image">  <!--change currentMeal.image to image IF the image uploader does not work -->
-<button name="image" ngf-select="image" ng-model="currentMeal.image">Upload image</button>
-<button ng-click="updatemeal(currentMeal)">Submit</button>
+<img style="width: 300px;" ngf-thumbnail="currentMeal.image">
+ <button ng-click="deletePrepMeal(currentMeal.id)">Submit</button>
