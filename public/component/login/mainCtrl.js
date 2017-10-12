@@ -24,13 +24,14 @@ $scope.getCurrentMeal($scope.id).then(response => {
 // Get access to the user id
 
 
-console.log($scope.currentMeal);
+
 // let userInfo = user.authid
 
 //Controllers
 $scope.getMeals  =
   mainSrvc.getMeals().then(response => {
     $scope.meals = response.data
+    console.log(response);
   })
 
 // for(var i = 0; i < meals.length; i++){
@@ -98,7 +99,7 @@ const getMeals = (req,res) => {
 
 
 
-$scope.deletePrepMeal = (mealIwantToDelete) => { // this mealIwantTOdelete is in mainCtrl called currentMeal.id parameter of func
+$scope.deletePrepMeal = (mealIwantToDelete) => { // this mealIwantTOdelete is in update.html called currentMeal.id parameter of func
   console.log(mealIwantToDelete)
   mainSrvc.deletePrepMeal(mealIwantToDelete)
 }

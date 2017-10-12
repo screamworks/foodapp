@@ -3,7 +3,7 @@ angular.module('servproj').service('mainSrvc', function($http) {
     // don't write new versions of this in every service, keep it DRY
 
     this.createMeal = (mealName, mealCost, description, vegan, vegetarian, nonVeg, glutenFree, soy, nuts, schedule, image) => {
-      console.log(image)
+
     const storageRef = firebase.storage().ref();
     const uploadTask = storageRef.child('images/' + image.name).put(image);
     uploadTask.on('state_changed', (snapshot) => {
