@@ -217,7 +217,7 @@ app.get('/api/cart', (req,res) => {
 
 app.delete('/api/deleteFromCart/:foodid', (req, res) => {
   const db = req.app.get('db');
-  db.deleteFromCart({foodid: req.params.id})
+  db.deleteFromCart({foodid: req.params.foodid})
   .then(response => {
     return res.json(response)
   })
