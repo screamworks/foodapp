@@ -2,8 +2,12 @@
 
 <h5>show cart items, price, quantity, using string interpolation and then do some math to do total price + total quantity</h5>
 
-<button ng-click="addToCart()">FIRE ME</button>
 
 <button ui-sref="main">HOME PAGE</button>
 
-<button ui-sref="main" ng-click="submit(mealName, mealCost, description, vegan, vegetarian, nonVeg, glutenFree, soy, nuts, schedule, image)">Submit</button>
+<div ng-repeat="khana in cart" > <!--- need to track by the meals id --->
+  <h2>TITLE: {{ khana.mealname }}</h2>
+  <h6> quantity: {{ khana.quantity }}</h6>
+  <h4> mealcost: {{ khana.mealcost}}</h4>
+  <hr/>
+</div>

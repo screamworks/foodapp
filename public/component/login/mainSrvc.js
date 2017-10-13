@@ -50,7 +50,6 @@ angular.module('servproj').service('mainSrvc', function($http) {
 
     this.getMeals = () => {
       return $http.get('/api/menu').then(response => {
-        console.log(response, "this is how to see an added meal from service")
         return response;
       })
     }
@@ -80,6 +79,13 @@ angular.module('servproj').service('mainSrvc', function($http) {
 
 
 
+
+    this.filledCart = () => {
+      return $http.get('/api/cart').then(response => {
+        console.log(response, "doing carty stuff in SRVC")
+            return response;
+      })
+    }
 
 
 

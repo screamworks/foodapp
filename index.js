@@ -199,6 +199,17 @@ app.post('/api/addToCart', (req, res) => {
 
 
 
+app.get('/api/cart', (req,res) => {
+  const db = req.app.get('db');
+  db.getCart(req.body)
+  .then(response => {
+    console.log(response, "carting in the back yayay")
+    return res.json(response)
+  })
+})
+
+
+
 // listen on port
 app.listen(port, ()=> {
     console.log(`LISTENING ON PORT: ${port}`);
