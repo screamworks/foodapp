@@ -6,8 +6,9 @@
 <button ui-sref="main">HOME PAGE</button>
 
 <div ng-repeat="khana in cart" > <!--- need to track by the meals id --->
-  <h2>TITLE: {{ khana.mealname }}</h2>
+  <h2>title: {{ khana.mealname }}</h2>
   <h6> quantity: {{ khana.quantity }}</h6>
   <h4> mealcost: {{ khana.mealcost}}</h4>
+  <button ng-click=deleteFromCart(khana.foodid)>Delete From Cart</button>
   <hr/>
 </div>

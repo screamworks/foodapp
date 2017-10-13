@@ -210,6 +210,45 @@ app.get('/api/cart', (req,res) => {
 
 
 
+
+
+
+
+
+app.delete('/api/deleteFromCart/:foodid', (req, res) => {
+  const db = req.app.get('db');
+  db.deleteFromCart({foodid: req.params.id})
+  .then(response => {
+    return res.json(response)
+  })
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // listen on port
 app.listen(port, ()=> {
     console.log(`LISTENING ON PORT: ${port}`);

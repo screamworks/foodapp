@@ -82,7 +82,6 @@ angular.module('servproj').service('mainSrvc', function($http) {
 
     this.filledCart = () => {
       return $http.get('/api/cart').then(response => {
-        console.log(response, "doing carty stuff in SRVC")
             return response;
       })
     }
@@ -90,6 +89,10 @@ angular.module('servproj').service('mainSrvc', function($http) {
 
 
 
+    this.deleteFromCart = (mealIwantToRemoveFromCart) => {
+      console.log(mealIwantToRemoveFromCart, "deleting from SRVC")
+      return $http.delete('/api/deleteFromCart/'+ mealIwantToRemoveFromCart)
+    }
 
 
 
