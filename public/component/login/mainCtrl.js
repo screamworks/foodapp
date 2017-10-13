@@ -1,4 +1,4 @@
-angular.module('servproj').controller('mainCtrl', function (mainSrvc, $interval, $scope, $http, $stateParams){
+angular.module('servproj').controller('mainCtrl', function (mainSrvc, $interval, $scope, $http, $stateParams, $window){
 
 // for stateParams - app.routes.js has id on its updateMeal state and ui-sref on view on main.html
 
@@ -135,9 +135,10 @@ $scope.deletePrepMeal = (mealIwantToDelete) => { // this mealIwantTOdelete is in
 
 
 
-
-
-
+$scope.addToCart = (fname, fschedule, fmealcost, fid) => {
+  console.log('adding to cart from CTRL', fname, fschedule, fmealcost, fid)
+  mainSrvc.addToCart(fname, fschedule, fmealcost, fid)
+}
 
 
 

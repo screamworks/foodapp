@@ -28,7 +28,11 @@ app.use(cors());
 app.use(express.static(`public`));
 
 // connecting to our DB with massive
-massive(connectionString).then(db => app.set('db', db));
+// massive(connectionString).then(db => app.set('db', db));
+
+massive(connectionString).then(db => app.set('db', db)).catch(function(e){
+  console.log(e)
+});
 
 // setting up express sessions
 // secret: config.session.secret;
@@ -184,6 +188,12 @@ console.log('hello from indexJS')
       return res.json(response)
 })
 })
+
+app.post('/api/addToCart', (req, res) => {
+   console.log(req.body)
+   req.app.get('db').addToCart(req.body)
+   console.log('and now the cart is in the index :D')
+});
 
 
 

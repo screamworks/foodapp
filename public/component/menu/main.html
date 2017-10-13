@@ -169,12 +169,14 @@
         <h6> Vegan: {{food.vegan}}</h6>
         <h4>DESCRIPTION: {{ food.description}}</h4>
         <button ui-sref="updatemeal({ id: food.id })">Update Meal</button>
-        <button ui-sref="cart">CART</button>
+<!--- this NGCLICK is going to take the ID of foods and add to cart, BUT! food.schedule should be quantity, and food.ID should be AUTHID (username) -->
+        <button ng-click="addToCart(food.mealname, food.schedule, food.mealcost, food.id)">Add to Cart---table</button>
         <hr />
       </div>
 
 
 
+        <button ui-sref="cart">go to checkoutcart</button>
 
 
 
