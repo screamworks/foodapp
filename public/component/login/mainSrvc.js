@@ -74,7 +74,7 @@ angular.module('servproj').service('mainSrvc', function($http) {
 
     this.addToCart = (fname, fschedule, fmealcost, fid) => {
       console.log('adding to cart from srvc', fname, fschedule, fmealcost, fid)
-      return $http.post('/api/addToCart/')
+      return $http.post('/api/addToCart/',{fname, fschedule, fmealcost, fid})
     }
 
 

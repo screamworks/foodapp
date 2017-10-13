@@ -190,8 +190,8 @@ console.log('hello from indexJS')
 })
 
 app.post('/api/addToCart', (req, res) => {
-   console.log(req.body)
-   req.app.get('db').addToCart(req.body)
+   const {fname, fschedule, fmealcost, fid } = req.body;
+   req.app.get('db').addToCart([fname, fschedule, fmealcost, fid]).then(resp=>console.log(resp))
    console.log('and now the cart is in the index :D')
 });
 

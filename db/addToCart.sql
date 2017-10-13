@@ -1,1 +1,1 @@
-INSERT INTO cart (mealname, quantity, mealcost, authid) VALUES ($1, $2, $3, $4) RETURNING *;
+INSERT INTO cart (mealname, quantity, mealcost, foodid) VALUES ($1, $2, $3, $4) RETURNING *;
