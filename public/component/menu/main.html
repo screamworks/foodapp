@@ -12,6 +12,7 @@
   <div class='swanky_title'>
     <h1>Featured Parmeals</h1>
     <p>A mix of our favorite meals</p>
+    <button ui-sref="addMeal" name="button">addMeal</button>
     <div class='swanky_title__social'>
       <a href='https://www.twitter.com/jamiecoulter89' target='_blank'>
         <div class='slide'>
@@ -142,25 +143,34 @@
 
 
 
-        <h2> oaffeoh</h2>
-        <h3> fheiafhaif</h3>
+        <h2> MAIN TITLE</h2>
+        <h3> Test Title 2</h3>
+
+
+
 
 <!-- not working -->
-        <h1 ng-if="!user.authid">{{user}}</h1>
+        <!-- <h1 ng-if="!user.authid">{{user}}</h1>
         <div ng-if="user.authid">
             <h1>{{user.authid}}</h1>
             <h1>{{user.username}}</h1>
-        </div>
+        </div> -->
 <!--- username needs to show above ^^^^ --->
+
+
+
 
 <!--- how to display the data (meals) from the SQL database in postico  play -->
 
       <div ng-repeat="food in meals track by food.id" > <!--- need to track by the meals id --->
-        <h2>{{ food.mealname }}</h2>
-        <h4>{{ food.description}}</h4>
-        <img ng-src="{{ food.image }}">
+        <h2>TITLE: {{ food.mealname }}</h2>
+
+        <img  style="height:250px; width: 250px; " ng-src="{{ food.image }}">
         <h6> Vegan: {{food.vegan}}</h6>
+        <h4>DESCRIPTION: {{ food.description}}</h4>
         <button ui-sref="updatemeal({ id: food.id })">Update Meal</button>
+        <button ui-sref="cart">CART</button>
+        <hr />
       </div>
 
 

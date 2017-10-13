@@ -33,7 +33,13 @@ angular.module('servproj').service('mainSrvc', function($http) {
     });
     }
 
+
+
+
     this.getUser = () => $http.get('/auth/me');
+
+
+
 
     this.createUser = (user) => {
       console.log(user)
@@ -44,6 +50,7 @@ angular.module('servproj').service('mainSrvc', function($http) {
 
     this.getMeals = () => {
       return $http.get('/api/menu').then(response => {
+        console.log(response, "this is how to see an added meal from service")
         return response;
       })
     }

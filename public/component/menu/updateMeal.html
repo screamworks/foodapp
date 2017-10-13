@@ -36,7 +36,7 @@
       <br>
       <img style="width: 300px;" ngf-thumbnail="currentMeal.image || '../assets/img/placeholder.png'">  <!--change currentMeal.image to image IF the image uploader does not work -->
       <button name="image" ngf-select="image" ng-model="currentMeal.image">Upload image</button>
-      <button ng-click="updatemeal(currentMeal)">Submit</button>
+      <button ui-sref="main" ng-click="updatemeal(currentMeal)">Submit</button>
     </form>
 
 <br>
