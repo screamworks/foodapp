@@ -20,14 +20,16 @@ $scope.getCurrentMeal($scope.id).then(response => {
 }
 
 
-//Somehow get access to the user ID
 
-// Get  everything to talk to eachother
-// Get access to the user id
+mainSrvc.getUser().then(response => {
+  console.log(response.data.authid)
+  $scope.authid = response.data.authid;
+})
 
 
 
-// let userInfo = user.authid
+
+
 
 //Controllers
 $scope.getMeals  =
@@ -145,10 +147,7 @@ $scope.addToCart = (fname, fschedule, fmealcost, fid, fauthid) => {
 
 
 
-mainSrvc.getUser().then(response => {
-  console.log(response.data.authid)
-  $scope.authid = response.data.authid;
-})
+
 
 
 

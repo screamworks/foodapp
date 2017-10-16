@@ -73,6 +73,7 @@ angular.module('servproj').service('mainSrvc', function($http) {
 
     this.addToCart = (fname, fschedule, fmealcost, fid, fauthid) => {
       console.log('adding to cart from srvc', fname, fschedule, fmealcost, fid, fauthid)
+      console.log('is it getting the AUTHID', fauthid)
       return $http.post('/api/addToCart/',{fname, fschedule, fmealcost, fid, fauthid})
     }
 

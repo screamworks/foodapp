@@ -169,9 +169,9 @@
         <h6> Vegan: {{food.vegan}}</h6>
         <h4>DESCRIPTION: {{ food.description}}</h4>
 <!--Add NG-if auth-id then show this here  -->
-        <button ng-if="food.authid" ui-sref="updatemeal({ id: food.id })">Update Meal</button>
+        <button ng-if="food.authid == authid" ui-sref="updatemeal({ id: food.id })">Update Meal</button>
 
-        <button ng-click="addToCart(food.mealname, food.schedule, food.mealcost, food.id, food.authid)">Add to Cart---table</button>
+        <button ng-if="food.authid != authid" ng-click="addToCart(food.mealname, food.schedule, food.mealcost, food.id, food.authid)">Add to Cart---table</button>
         <hr />
       </div>
 
