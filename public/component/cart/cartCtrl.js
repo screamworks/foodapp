@@ -11,5 +11,7 @@ angular.module('servproj').controller('cartCtrl', function($scope, mainSrvc, $ht
     mainSrvc.deleteFromCart(mealIwantToRemoveFromCart)
   }
 
+  
+
 
 });
