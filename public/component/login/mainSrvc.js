@@ -2,8 +2,8 @@ angular.module('servproj').service('mainSrvc', function($http) {
     // you can use this function for every request to get user.
     // don't write new versions of this in every service, keep it DRY
 
-    this.createMeal = (mealName, mealCost, description, vegan, vegetarian, nonVeg, glutenFree, soy, nuts, schedule, image) => {
-
+    this.createMeal = (mealName, mealCost, description, vegan, vegetarian, nonVeg, glutenFree, soy, nuts, schedule, image, authid) => {
+        console.log(authid, "createMealSrvce!")
     const storageRef = firebase.storage().ref();
     const uploadTask = storageRef.child('images/' + image.name).put(image);
     uploadTask.on('state_changed', (snapshot) => {
@@ -23,7 +23,7 @@ angular.module('servproj').service('mainSrvc', function($http) {
 
       const downloadURL = uploadTask.snapshot.downloadURL;
 
-      let uploadParams = [mealName, mealCost, description, vegan, vegetarian, nonVeg, glutenFree, soy, nuts, schedule, downloadURL]
+      let uploadParams = [mealName, mealCost, description, vegan, vegetarian, nonVeg, glutenFree, soy, nuts, schedule, downloadURL, authid]
 
 
 
@@ -71,9 +71,9 @@ angular.module('servproj').service('mainSrvc', function($http) {
     }
 
 
-    this.addToCart = (fname, fschedule, fmealcost, fid) => {
-      console.log('adding to cart from srvc', fname, fschedule, fmealcost, fid)
-      return $http.post('/api/addToCart/',{fname, fschedule, fmealcost, fid})
+    this.addToCart = (fname, fschedule, fmealcost, fid, fauthid) => {
+      console.log('adding to cart from srvc', fname, fschedule, fmealcost, fid, fauthid)
+      return $http.post('/api/addToCart/',{fname, fschedule, fmealcost, fid, fauthid})
     }
 
 
@@ -129,6 +129,8 @@ angular.module('servproj').service('mainSrvc', function($http) {
     //
     // image =  meal.image;
     // if(!image){ image = newMeal.image;}
+
+
 
 
 });

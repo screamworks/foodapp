@@ -168,9 +168,10 @@
         <img  style="height:250px; width: 250px; " ng-src="{{ food.image }}">
         <h6> Vegan: {{food.vegan}}</h6>
         <h4>DESCRIPTION: {{ food.description}}</h4>
-        <button ui-sref="updatemeal({ id: food.id })">Update Meal</button>
-<!--- this NGCLICK is going to take the ID of foods and add to cart, BUT! food.schedule should be quantity, and food.ID should be AUTHID (username) -->
-        <button ng-click="addToCart(food.mealname, food.schedule, food.mealcost, food.id)">Add to Cart---table</button>
+<!--Add NG-if auth-id then show this here  -->
+        <button ng-if="food.authid" ui-sref="updatemeal({ id: food.id })">Update Meal</button>
+
+        <button ng-click="addToCart(food.mealname, food.schedule, food.mealcost, food.id, food.authid)">Add to Cart---table</button>
         <hr />
       </div>
 

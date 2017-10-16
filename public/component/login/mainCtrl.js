@@ -33,7 +33,7 @@ $scope.getCurrentMeal($scope.id).then(response => {
 $scope.getMeals  =
   mainSrvc.getMeals().then(response => {
     $scope.meals = response.data
-    console.log(response);
+    console.log(response.data);
   })
 
 // for(var i = 0; i < meals.length; i++){
@@ -76,9 +76,10 @@ $scope.getMeals  =
 
 
 
-  $scope.submit = (mealName, mealCost, description, vegan, vegetarian, nonVeg, glutenFree, soy, nuts, schedule, image) => {
-    mainSrvc.createMeal(mealName, mealCost, description, vegan, vegetarian, nonVeg, glutenFree, soy, nuts, schedule, image)
+  $scope.submit = (mealName, mealCost, description, vegan, vegetarian, nonVeg, glutenFree, soy, nuts, schedule, image, authid) => {
+    mainSrvc.createMeal(mealName, mealCost, description, vegan, vegetarian, nonVeg, glutenFree, soy, nuts, schedule, image, authid)
       }
+
 
 
 
@@ -135,12 +136,19 @@ $scope.deletePrepMeal = (mealIwantToDelete) => { // this mealIwantTOdelete is in
 
 
 
-$scope.addToCart = (fname, fschedule, fmealcost, fid) => {
-  console.log('adding to cart from CTRL', fname, fschedule, fmealcost, fid)
-  mainSrvc.addToCart(fname, fschedule, fmealcost, fid)
+$scope.addToCart = (fname, fschedule, fmealcost, fid, fauthid) => {
+  console.log('adding to cart from CTRL', fname, fschedule, fmealcost, fid, fauthid)
+  mainSrvc.addToCart(fname, fschedule, fmealcost, fid, fauthid)
 }
 
 
+
+
+
+mainSrvc.getUser().then(response => {
+  console.log(response.data.authid)
+  $scope.authid = response.data.authid;
+})
 
 
 
