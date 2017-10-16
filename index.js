@@ -31,7 +31,7 @@ app.use(express.static(`public`));
 // massive(connectionString).then(db => app.set('db', db));
 
 massive(connectionString).then(db => app.set('db', db)).catch(function(e){
-  console.log(e)
+
 });
 
 // setting up express sessions
@@ -170,14 +170,13 @@ app.put('/api/updatemeal', (req, res) => {
 
 app.get('/current/meal/', (req, res) => {
   const db = req.app.get('db');
-
   db.getCurrentMeal(req.query.id)
   .then(response => {
-
   // console.log(response)
   return res.json(response)
 })
 })
+
 
 app.delete('/api/deletePrepMeal/:id', (req, res) => {
   const db = req.app.get('db');
@@ -189,6 +188,7 @@ console.log('hello from indexJS')
 })
 })
 
+
 app.post('/api/addToCart', (req, res) => {
    const {fname, fschedule, fmealcost, fid } = req.body;
    console.log(req.session.passport.user.authid);
@@ -197,23 +197,14 @@ app.post('/api/addToCart', (req, res) => {
 });
 
 
-
-
-
-app.get('/api/cart', (req,res) => {
-  const db = req.app.get('db');
-  db.getCart(req.body)
-  .then(response => {
-    console.log(response, "carting in the back yayay")
-    return res.json(response)
-  })
-})
-
-
-
-
-
-
+// app.get('/api/cart', (req,res) => {
+//   const db = req.app.get('db');
+//   db.getCart(req.body)
+//   .then(response => {
+//     console.log(response, "carting in the back yayay")
+//     return res.json(response)
+//   })
+// })
 
 
 app.delete('/api/deleteFromCart/:foodid', (req, res) => {
@@ -228,9 +219,16 @@ app.delete('/api/deleteFromCart/:foodid', (req, res) => {
 
 
 
-
-
-
+app.get('/current/cart', (req, res) => {
+  const db = req.app.get('db');
+  console.log(req.session.passport.user.authid, "THIS IS THE SESSION")
+  const session = req.session.passport.user.authid;
+  db.getCurrentCart(session)
+  .then(response => {
+    console.log(response)
+    return res.json(response)
+  })
+})
 
 
 
