@@ -9,7 +9,7 @@ $scope.deleteFromCart = (mealIwantToRemoveFromCart) => {
 mainSrvc.getCurrentCart().then(response => {
 console.log(response)
 $scope.getCurrentCart = response.data;
-})
+
 
 ///// TEST CODE FOR STRIPE API
 $scope.reload = () => {
@@ -23,9 +23,9 @@ $scope.openPayment = function(name, desc) {
         token: function(token) {
         var payload = {
         token: token,
-        total: $scope.final * 100,
+        total: $scope.total * 100,
         }
-        appSrv.makePayment(payload).then(function(response) {
+        mainSrvc.makePayment(payload).then(function(response) {
         console.log(response);
        });
        }
@@ -33,15 +33,24 @@ $scope.openPayment = function(name, desc) {
        handler.open({
             name: 'ParMeal',
             description: "Meal-Solutions",
-            amount: $scope.final * 100
+            amount: $scope.total * 100
         });
 }
 
+$scope.totalPrice = function(getCurrentCart){
+  $scope.total = 0;
+  console.log(getCurrentCart)
+  getCurrentCart.forEach(item => {
+    $scope.total += item.mealcost;
+  })
+  console.log("total:", $scope.getCurrentCart)
+  return $scope.total;
+}
+
+$scope.totalPrice($scope.getCurrentCart);
 
 
-
-
-
+})
 
 
 

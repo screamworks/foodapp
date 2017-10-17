@@ -10,5 +10,9 @@ module.exports = {
     db: {
         dbUser: 'shivapatel',
         database: 'FoodConsumers'
+    },
+    keys: {
+       stripePublicKey: 'pk_test_xeg5ieFmQA8ip3yfOfHR14l6',
+       stripeSecretKey: 'sk_test_aY0vIETn2RYe14kmDmrM5QeB'
     }
 }

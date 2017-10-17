@@ -21,6 +21,8 @@ const connectionString = `postgres://${dbUser}@localhost/${database}`;
 
 // App Declaration
 const app = express();
+const {stripeSecretKey} = require('./server/config').keys;
+const stripe = require('stripe')(stripeSecretKey);
 
 // required middlewares
 app.use(json());
