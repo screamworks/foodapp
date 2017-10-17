@@ -87,4 +87,24 @@ angular.module('servproj').service('mainSrvc', function($http) {
       })
     }
 
+
+
+
+
+
+    // TEST CODE FOR STRIPE
+    this.makePayment = function(payload) {
+        return $http.post('/api/payment', payload);
+    }
+
+
+
+
+
+
+
+
+
+
+
 });

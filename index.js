@@ -236,8 +236,27 @@ app.get('/current/cart', (req, res) => {
 
 
 
+// TEST CODE STRIPE
+app.post('/api/payment', (req, res) => {
+  console.log(req.body);
+  const amount = Math.round(req.body.total,4);
+  // console(req.body)
+  const { id, email } = req.body.token;
+  const cardId = req.body.token.card.id;
 
-
+stripe.customers.create({
+    email,
+    source: id
+  })
+  .then(customer => stripe.charges.create({
+    amount,
+    description: 'Meal-Prep Solutions',
+    currency: 'usd',
+    customer: customer.id,
+    card: cardId
+  }))
+  .then(charge => res.json({message: 'Successful Message'}));
+});
 
 
 
