@@ -9,7 +9,7 @@ $scope.deleteFromCart = (mealIwantToRemoveFromCart) => {
 mainSrvc.getCurrentCart().then(response => {
 console.log(response)
 $scope.getCurrentCart = response.data;
-
+})
 
 ///// TEST CODE FOR STRIPE API
 $scope.reload = () => {
@@ -51,22 +51,6 @@ $scope.openPayment = function(name, desc) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-})
 
 
 

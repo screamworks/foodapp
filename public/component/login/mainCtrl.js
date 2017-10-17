@@ -145,9 +145,7 @@ $scope.addToCart = (fname, fschedule, fmealcost, fid, fauthid) => {
 
 
 
-
-
-
+ $scope.reloadPage = function(){window.location.reload();}
 
 
 

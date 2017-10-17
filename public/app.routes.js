@@ -23,6 +23,15 @@ angular.module('servproj').config(($urlRouterProvider, $stateProvider) => {
     })
 
 
+
+    .state('about', {
+      url: '/about',
+      templateUrl: './component/home/about.html',
+      controller: 'mainCtrl'
+    })
+
+
+
     .state('main', {
       url: '/menu',
       templateUrl: './component/menu/main.html',
@@ -44,6 +53,12 @@ angular.module('servproj').config(($urlRouterProvider, $stateProvider) => {
       url: '/updatemeal/:id',
       templateUrl: './component/menu/updatemeal.html',
       controller: 'mainCtrl'
+    })
+
+    .state('myMadeMeals', {
+      url: '/mymademeals',
+      templateUrl: './component/orders/myMadeMeals.html',
+      controller: 'cartCtrl'
     })
 
     .state('cart', {
