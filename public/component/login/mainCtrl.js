@@ -1,4 +1,4 @@
-angular.module('servproj').controller('mainCtrl', function (mainSrvc, $interval, $scope, $http, $stateParams, $window){
+angular.module('servproj').controller('mainCtrl', function (mainSrvc, $scope, $http, $stateParams){
 
 // for stateParams - app.routes.js has id on its updateMeal state and ui-sref on view on main.html
 
@@ -26,17 +26,35 @@ mainSrvc.getUser().then(response => {
   $scope.authid = response.data.authid;
 })
 
+$scope.getMeals = function() {
+    $http.get('/api/menu').then( function(res) {
+      $scope.meals = res.data;
+    })
+  }
 
+  $scope.getMeals();
 
 
 
 
 //Controllers
-$scope.getMeals  =
-  mainSrvc.getMeals().then(response => {
-    $scope.meals = response.data
-    console.log(response.data);
-  })
+// $scope.getMeals  =
+//   mainSrvc.getMeals().then(response => {
+//     $scope.meals = response.data
+//     console.log(response.data);
+//   })
+
+
+// console.log(meals);
+
+// function getMeals(){
+//   mainSrvc.getMeals().then(response => {
+//     $scope.meals = response.data
+//     console.log(response.data);
+//   })
+// }
+//
+// getMeals();
 
 // for(var i = 0; i < meals.length; i++){
 //   if(meals[i].id === $stateParams.id){
@@ -81,6 +99,7 @@ $scope.getMeals  =
   $scope.submit = (mealName, mealCost, description, vegan, vegetarian, nonVeg, glutenFree, soy, nuts, schedule, image, authid) => {
     mainSrvc.createMeal(mealName, mealCost, description, vegan, vegetarian, nonVeg, glutenFree, soy, nuts, schedule, image, authid)
       }
+
 
 
 

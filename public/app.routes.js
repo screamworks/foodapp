@@ -35,11 +35,11 @@ angular.module('servproj').config(($urlRouterProvider, $stateProvider) => {
     .state('main', {
       url: '/menu',
       templateUrl: './component/menu/main.html',
+      controller: 'mainCtrl',
       resolve: {
-          user: (mainSrvc) => {
-            mainSrvc.getUser()
-            .then(response => {return response.data})
-          }
+        getMeals($http) {
+          return $http.get('/api/menu');
+        }
       }
     })
 

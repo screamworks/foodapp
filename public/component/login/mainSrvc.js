@@ -1,4 +1,4 @@
-angular.module('servproj').service('mainSrvc', function($http) {
+angular.module('servproj').service('mainSrvc', function($http, $state) {
     // you can use this function for every request to get user.
     // don't write new versions of this in every service, keep it DRY
 
@@ -27,7 +27,9 @@ angular.module('servproj').service('mainSrvc', function($http) {
 
         this.downloadURL = downloadURL
         console.log(downloadURL, "done");
-        return $http.post('/addmeal', uploadParams)
+        $http.post('/addmeal', uploadParams).then(function() {
+          $state.go('main');
+        })
     });
     }
 

@@ -136,10 +136,12 @@ app.get('/auth/logout', (req, res) => {
 
 // const mainCtrl = require('./component/login/mainCtrl.js');
 app.post('/addMeal', (req, res) => {
-    console.log(req.body)
     req.app
       .get('db')
       .upload_pic(req.body)
+      .then(results => {
+        res.json(results)
+      })
   });
 
 
