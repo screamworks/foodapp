@@ -32,7 +32,7 @@ $scope.getMeals = function() {
     })
   }
 
-  $scope.getMeals();
+$scope.getMeals();
 
 
 
@@ -56,12 +56,7 @@ $scope.getMeals = function() {
 //
 // getMeals();
 
-// for(var i = 0; i < meals.length; i++){
-//   if(meals[i].id === $stateParams.id){
-//     $scope.updateMeal = meals[i]
-//   }
-//   meals.id
-// };
+
 
 
 

@@ -7,7 +7,6 @@ $scope.deleteFromCart = (mealIwantToRemoveFromCart) => {
 
 
 mainSrvc.getCurrentCart().then(response => {
-console.log(response)
 $scope.getCurrentCart = response.data;
 
 
@@ -39,7 +38,6 @@ $scope.openPayment = function(name, desc) {
 
 $scope.totalPrice = function(getCurrentCart){
   $scope.total = 0;
-  console.log(getCurrentCart)
   getCurrentCart.forEach(item => {
     $scope.total += item.mealcost;
   })

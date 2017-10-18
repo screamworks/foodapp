@@ -267,6 +267,28 @@ stripe.customers.create({
 
 
 
+app.get('/api/mealsOrdered', (req, res) => {
+  const db = req.app.get('db');
+  const session = req.session.passport.user.authid;
+  db.getOrderedMeals(session)
+  .then(response => {
+    console.log(response)
+    return res.json(response)
+  })
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
