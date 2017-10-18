@@ -48,18 +48,18 @@ $scope.totalPrice = function(getCurrentCart){
 $scope.totalPrice($scope.getCurrentCart);
 
 $scope.cartToOrder = function(getCurrentCart){
-  console.log(getCurrentCart);
+  // console.log(getCurrentCart);
   mainSrvc.cartToOrder(getCurrentCart).then(response => {
-    console.log(response);
+    // console.log(response);
     $scope.orders = response;
   }).catch(err => console.log(err));
 }
 
 
-// $scope.deleteFromCart = (mealIwantToRemoveFromCart) => {
-//     console.log(mealIwantToRemoveFromCart, "firing delete from CTRL")
-//     mainSrvc.deleteFromCart(mealIwantToRemoveFromCart)
-//   }
+$scope.emptyCart = (getCurrentCart) => {
+  console.log("removing items from cart", getCurrentCart)
+  mainSrvc.emptyCart(getCurrentCart)
+}
 
 
 

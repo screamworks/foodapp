@@ -1,4 +1,12 @@
 
 <h1>All meals past to present</h1>
 
-<!--SHOULD SHOW ALL ORDERS MADE IN PAST --->
+
+<div ng-repeat="past in orderedMeals" >
+  <h2>TITLE: {{ past.mealname }}</h2>
+  <h6> quantity {{past.quantity}}</h6>
+  <h4> foodid {{ past.foodid}}</h4>
+  <h5>cost {{ past.mealcost }}</h5>
+
+  <hr />
+</div>
