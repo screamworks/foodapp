@@ -196,7 +196,7 @@ app.delete('/api/deletePrepMeal/:id', (req, res) => {
 app.post('/api/addToCart', (req, res) => {
    const {fname, fschedule, fmealcost, fid } = req.body;
   //  console.log(req.session.passport.user.authid);
-   req.app.get('db').addToCart([fname, fschedule, fmealcost, fid, req.session.passport.user.authid]).then(resp=>console.log(resp))
+   req.app.get('db').addToCart([fname, fschedule, fmealcost, fid, req.session.passport.user.authid]).then(resp=>res.json(resp))
   //  console.log('and now the cart is in the index :D')
 });
 

@@ -145,7 +145,8 @@
 
         <h2> MAIN TITLE</h2>
         <h3> Test Title 2</h3>
-
+<!--TEST CODE FOR SEARCH BOX -->
+<input type="username" ng-model="searchBox">
 
 
 
@@ -162,7 +163,7 @@
 
 <!--- how to display the data (meals) from the SQL database in postico  play -->
 
-      <div ng-repeat="food in meals track by food.id" > <!--- need to track by the meals id --->
+      <div ng-repeat="food in meals | filter:searchBox track by food.id" > <!--- need to track by the meals id --->
         <h2>TITLE: {{ food.mealname }}</h2>
 
         <img  style="height:250px; width: 250px; " ng-src="{{ food.image }}">
