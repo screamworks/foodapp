@@ -90,16 +90,20 @@ angular.module('servproj').service('mainSrvc', function($http, $state) {
     }
 
 
-
-
-
-
-    // TEST CODE FOR STRIPE
     this.makePayment = function(payload) {
         return $http.post('/api/payment', payload);
     }
 
 
+
+
+    this.cartToOrder = function(getCurrentCart){
+      return $http.post('/api/cartToOrder', getCurrentCart)
+    }
+    // this.cartToOrder = (mn, q, fid, aid, mc) => {
+    //   console.log(mn, q, fid, aid, mc, "cart to order table mainSRVC")
+    //   return $http.post('/api/cartToOrder', {mn, q, fid, aid, mc})
+    // }
 
 
 

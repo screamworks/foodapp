@@ -57,20 +57,20 @@ passport.use(new Auth0Strategy({
     callbackURL:  '/auth/callback'
    }, (accessToken, refreshToken, extraParams, profile, done) => {
      //Find user in database
-     console.log(profile, 'strategy');
+    //  console.log(profile, 'strategy');
      const db = app.get('db');
      // .then means this is a promise
 
      db.getUserByAuthId([profile._json.sub]).then((user, err) => {
-         console.log('INITIAL: ', user);
+        //  console.log('INITIAL: ', user);
        if (!user[0]) { //if there isn't a user, we'll create one!
-         console.log('CREATING USER:');
+        //  console.log('CREATING USER:');
          db.createUserByAuth([profile.displayName, profile._json.sub]).then((user, err) => {
-           console.log('USER CREATED', user[0]);
+          //  console.log('USER CREATED', user[0]);
            return done(err, user[0]); // GOES TO SERIALIZE USER
          })
        } else { //when we find the user, return it
-         console.log('FOUND USER', user[0]);
+        //  console.log('FOUND USER', user[0]);
          return done(err, user[0]);
        }
      });
@@ -84,7 +84,7 @@ passport.use(new Auth0Strategy({
 
  // pull user from session for manipulation
  passport.deserializeUser((user, done) => {
-     console.log(user);
+    //  console.log(user);
      done(null, user);
  });
 
@@ -101,10 +101,10 @@ app.get('/api/test', (req, res, next) => {
 
 app.put('/api/users', (req,res,next) => {
   const db = req.app.get('db');
-  console.log(req.session.passport.user.authid);
-  console.log(req.body)
+  // console.log(req.session.passport.user.authid);
+  // console.log(req.body)
   db.updateUser([req.session.passport.user.authid, req.body.first, req.body.last, req.body.email]).then((user)=>{
-    console.log(req.session);
+    // console.log(req.session);
     res.json(user);
   }).catch(error => console.log('ERROR:', error))
 })
@@ -159,13 +159,13 @@ app.get('/api/menu', (req,res) => {
 
 
 app.put('/api/updatemeal', (req, res) => {
-  console.log("index.js update meal body: ",req.body)
+  // console.log("index.js update meal body: ",req.body)
   const db = req.app.get('db');
 
   db.updateMeal(req.body)
   .then(response => {
 
-  console.log("hello pt4")
+  // console.log("hello pt4")
   res.send(response);
     })
 })
@@ -184,10 +184,10 @@ app.get('/current/meal/', (req, res) => {
 
 app.delete('/api/deletePrepMeal/:id', (req, res) => {
   const db = req.app.get('db');
-console.log('hello from indexJS')
+// console.log('hello from indexJS')
   db.deletePrepMeal({id: req.params.id})
   .then(response => {
-    console.log('im back from hawaii')
+    // console.log('im back from hawaii')
       return res.json(response)
 })
 })
@@ -195,9 +195,9 @@ console.log('hello from indexJS')
 
 app.post('/api/addToCart', (req, res) => {
    const {fname, fschedule, fmealcost, fid } = req.body;
-   console.log(req.session.passport.user.authid);
+  //  console.log(req.session.passport.user.authid);
    req.app.get('db').addToCart([fname, fschedule, fmealcost, fid, req.session.passport.user.authid]).then(resp=>console.log(resp))
-   console.log('and now the cart is in the index :D')
+  //  console.log('and now the cart is in the index :D')
 });
 
 
@@ -225,11 +225,11 @@ app.delete('/api/deleteFromCart/:foodid', (req, res) => {
 
 app.get('/current/cart', (req, res) => {
   const db = req.app.get('db');
-  console.log(req.session.passport.user.authid, "THIS IS THE SESSION")
+  // console.log(req.session.passport.user.authid, "THIS IS THE SESSION")
   const session = req.session.passport.user.authid;
   db.getCurrentCart(session)
   .then(response => {
-    console.log(response)
+    // console.log(response)
     return res.json(response)
   })
 })
@@ -242,7 +242,7 @@ app.get('/current/cart', (req, res) => {
 
 // TEST CODE STRIPE
 app.post('/api/payment', (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   const amount = Math.round(req.body.total,4);
   // console(req.body)
   const { id, email } = req.body.token;
@@ -272,7 +272,7 @@ app.get('/api/mealsOrdered', (req, res) => {
   const session = req.session.passport.user.authid;
   db.getOrderedMeals(session)
   .then(response => {
-    console.log(response)
+    // console.log(response)
     return res.json(response)
   })
 })
@@ -280,13 +280,20 @@ app.get('/api/mealsOrdered', (req, res) => {
 
 
 
+app.post('/api/cartToOrder', (req, res) => {
+  const promises =  req.body.map(cur=>{
+    const {mealname, quantity, foodid , authid, mealcost} = cur;
+    return req.app.get('db').cartToOrder([mealname, quantity, foodid , authid, mealcost])
+  })
+  Promise.all(promises).then(response => res.json(response))
+});
 
-
-
-
-
-
-
+// app.post('/api/addToCart', (req, res) => {
+//    const {fname, fschedule, fmealcost, fid } = req.body;
+//    console.log(req.session.passport.user.authid);
+//    req.app.get('db').addToCart([fname, fschedule, fmealcost, fid, req.session.passport.user.authid]).then(resp=>console.log(resp))
+//    console.log('and now the cart is in the index :D')
+// });
 
 
 

@@ -15,4 +15,4 @@
 
 <!---TEST CODE FOR STRIPE API--->
 <h1>Your Total is: {{ total }} </h1>
-<button ng-click="openPayment(khana.mealname, khana.mealcost)">pay with card</button>
+<button ng-click="openPayment(); cartToOrder(getCurrentCart)">pay with card</button>
