@@ -1,1 +1,1 @@
-SELECT * FROM cart WHERE authid = $1;
+SELECT * FROM orders WHERE authid = $1;
