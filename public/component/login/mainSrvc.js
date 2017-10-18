@@ -105,7 +105,16 @@ angular.module('servproj').service('mainSrvc', function($http, $state) {
     //   return $http.post('/api/cartToOrder', {mn, q, fid, aid, mc})
     // }
 
-
+    // this.emptyCart = () => {
+    //   console.log(getCurrentCart, "deleting cart from SRVC")
+    //   return $http.delete('/api/emptyTotalCart/:id' + getCurrentCart.authid)
+    // }
+    this.emptyCart = function(){
+      return $http.delete('/api/emptyTotalCart').then(function(response){
+        console.log(response.data)
+        return response.data;
+      })
+    }
 
 
 

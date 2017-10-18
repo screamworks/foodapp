@@ -56,11 +56,17 @@ $scope.cartToOrder = function(getCurrentCart){
 }
 
 
-$scope.emptyCart = (getCurrentCart) => {
-  console.log("removing items from cart", getCurrentCart)
-  mainSrvc.emptyCart(getCurrentCart)
-}
+// $scope.emptyCart = (getCurrentCart) => {
+//   console.log("removing items from cart", getCurrentCart)
+//   mainSrvc.emptyCart(getCurrentCart)
+// }
 
+  $scope.emptyCart = function(){
+    mainSrvc.emptyCart().then(response => {
+      console.log(response)
+      $scope.emptiedOutCart = response;
+    })
+  }
 
 
 })

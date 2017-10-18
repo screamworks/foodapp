@@ -14,7 +14,7 @@ const { dbUser, database } = require('./server/config').db;
 const { domain, clientID, clientSecret } = require('./server/config').auth0;
 
 // define port
-const port = 3000;
+const port = 3001;
 
 // our database connection information
 const connectionString = `postgres://${dbUser}@localhost/${database}`;
@@ -288,14 +288,25 @@ app.post('/api/cartToOrder', (req, res) => {
   Promise.all(promises).then(response => res.json(response))
 });
 
-// app.post('/api/addToCart', (req, res) => {
-//    const {fname, fschedule, fmealcost, fid } = req.body;
-//    console.log(req.session.passport.user.authid);
-//    req.app.get('db').addToCart([fname, fschedule, fmealcost, fid, req.session.passport.user.authid]).then(resp=>console.log(resp))
-//    console.log('and now the cart is in the index :D')
-// });
 
+// app.delete('/api/emptyTotalCart/:id', (req, res) => {
+//   const db = req.app.get('db');
+//   console.log('deleting cart and moving to order now')
+//   console.log(req.params)
+//   db.emptyTotalCart(req.body)
+//   .then(response => {
+//     console.log('hey it is deleted and the cart is now empty' )
+//     return res.json(response)
+//   })
+// })
 
+app.delete('/api/emptyTotalCart',(req, res) => {
+  console.log(req.session)
+  const session = req.session.passport.user.authid;
+  req.app
+  .get('db')
+  .emptyTotalCart(session).then(cart => res.json(cart));
+})
 
 
 
