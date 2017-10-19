@@ -7,10 +7,10 @@ angular.module('servproj').config(($urlRouterProvider, $stateProvider) => {
       templateUrl: './component/home/homeTmpl.html',
       controller: 'homeCtrl',
       resolve: {
-        user: mainSrvc => mainSrvc.getUser()
+        user: (mainSrvc, $state) => mainSrvc.getUser()
           .then(response => response.data)
           .catch(err =>
-            console.log(err)
+            err
           )
       }
     })
@@ -19,7 +19,14 @@ angular.module('servproj').config(($urlRouterProvider, $stateProvider) => {
     .state('login', {
       url: '/login',
       templateUrl: './component/login/loginTmpl.html',
-      controller: 'mainCtrl'
+      controller: 'mainCtrl',
+      resolve: {
+        user: (mainSrvc, $state) => mainSrvc.getUser()
+          .then(response => response.data)
+          .catch(err =>
+            $state.go('home')
+          )
+      }
     })
 
 
@@ -46,25 +53,53 @@ angular.module('servproj').config(($urlRouterProvider, $stateProvider) => {
     .state('addMeal', {
       url: '/addmeal',
       templateUrl: './component/menu/addMeal.html',
-      controller: 'mainCtrl'
+      controller: 'mainCtrl',
+      resolve: {
+        user: (mainSrvc, $state) => mainSrvc.getUser()
+          .then(response => response.data)
+          .catch(err =>
+            $state.go('home')
+          )
+      }
     })
 
     .state('updatemeal', {
       url: '/updatemeal/:id',
       templateUrl: './component/menu/updatemeal.html',
-      controller: 'mainCtrl'
+      controller: 'mainCtrl',
+      resolve: {
+        user: (mainSrvc, $state) => mainSrvc.getUser()
+          .then(response => response.data)
+          .catch(err =>
+            $state.go('home')
+          )
+      }
     })
 
     .state('mealsOrdered', {
       url: '/mealsordered',
       templateUrl: './component/orders/mealsOrdered.html',
-      controller: 'mealsOrderedCtrl'
+      controller: 'mealsOrderedCtrl',
+      resolve: {
+        user: (mainSrvc, $state) => mainSrvc.getUser()
+          .then(response => response.data)
+          .catch(err =>
+            $state.go('home')
+          )
+      }
     })
 
     .state('cart', {
       url: '/cart',
       templateUrl: './component/cart/cart.html',
-      controller: 'cartCtrl'
+      controller: 'cartCtrl',
+      resolve: {
+        user: (mainSrvc, $state) => mainSrvc.getUser()
+          .then(response => response.data)
+          .catch(err =>
+            $state.go('home')
+          )
+      }
     })
 
 

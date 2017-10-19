@@ -10,7 +10,7 @@
   <h1>DASHBOARD</h1>
   <ul>
     <li><a href="">menu</a></li>
-    <li><a href="">add meals</a></li>
+    <li><a ui-sref="addMeal">add meals</a></li>
     <li><a href="">past orders</a></li>
     <li><a href="">about</a></li>
     <li><a href="">cart</a></li>
@@ -53,14 +53,57 @@
 <div ng-controller="mainCtrl">
 
   <div class="featuredTitle">
-   <h1>Featured Parmeals</h1>
-   <p>A mix of our favorite meals</p>
+   <p class="yellow">Featured Parmeals</p>
+   <h4 class="babyBlue">A mix of our favorite dishes</h4>
   </div>
 
 
-  <button ui-sref="addMeal" name="button">addMeal</button>
 
-  <input type="username" ng-model="searchBox">
+
+
+
+
+
+
+
+<div class="positionMainSearchBar">
+  <div class="cntr">
+	<div class="cntr-innr">
+	  <label class="search" for="inpt_search">
+			<input id="inpt_search" type="text" ng-model="searchBox"/>
+		</label>
+    <br>
+
+		<p></p>
+	</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <button ui-sref="addMeal" name="button">addMeal</button> -->
+
+
+
+  <!-- <input type="username" ng-model="searchBox">   THIS IS THE SEARCHBOX -->
+
+
 <!-- not working -->
         <!-- <h1 ng-if="!user.authid">{{user}}</h1>
         <div ng-if="user.authid">
@@ -70,17 +113,31 @@
 <!--- username needs to show above ^^^^ --->
 
 <!--- how to display the data (meals) from the SQL database in postico  play -->
+<div class="flexWrapMainPage">
+
+
     <div ng-repeat="food in meals | filter:searchBox track by food.id" > <!--- need to track by the meals id --->
         <img class="mainPicRepeat" ng-src="{{ food.image }}">
-        <h2>{{ food.mealname }}</h2>
-        <h6>{{ food.vegan }}</h6>
-        <h4>{{ food.description }}</h4>
+        <h4>{{ food.mealname }}</h4>
+        <h5 class="red">{{ food.description }}</h5>
+        <h5 class="babyBlue">${{ food.mealcost }}</h5>
+        <h6>schedule: {{ food.schedule}}</h6>
+        <h6>vegan: {{ food.vegan }}</h6>
+        <h6>veg: {{ food.vegetarian }}</h6>
+        <h6>nonVeg: {{ food.nonveg}}</h6>
+        <h6>glutenFree: {{ food.glutenFree}}</h6>
+        <h6>soy: {{ food.soy }}</h6>
+        <h6>nuts: {{ food.nuts }}</h6>
+
 <!--Add NG-if auth-id then show this here  -->
   <button ng-if="food.authid == authid" ui-sref="updatemeal({ id: food.id })">Update Meal</button>
-  <button ng-if="food.authid != authid" ng-click="addToCart(food.mealname, food.schedule, food.mealcost, food.id, food.authid)">Add to Cart---table</button>
-  <hr />
+  <button ng-if="food.authid != authid" ng-click="addToCart(food.mealname, food.schedule, food.mealcost, food.id, food.authid)">add to cart</button>
+  <!-- <hr /> -->
+  <br>
+  <br>
+  <br>
     </div>
-
+</div>
   <button ui-sref="cart">go to checkoutcart</button>
 
         <div class='love'>
