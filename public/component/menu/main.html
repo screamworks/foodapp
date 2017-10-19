@@ -1,47 +1,55 @@
-<!-- / My brand -->
-<!-- <div class='brand'>
-  <a href='https://www.screamworks.github.com' target='_blank'>
-    <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/logo.png'>
-  </a>
-</div> -->
-<!-- / Begin Body -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div ng-controller="mainCtrl">
-
-  <div class='swanky'>
-  <!-- / Introduction Block -->
-  <div class='swanky_title'>
-    <h1>Featured Parmeals</h1>
-    <p>A mix of our favorite meals</p>
-    <button ui-sref="addMeal" name="button">addMeal</button>
-    <div class='swanky_title__social'>
-      <a href='https://www.twitter.com/jamiecoulter89' target='_blank'>
-        <div class='slide'>
-          <div class='arrow'>
-            <div class='stem'></div>
-            <div class='point'></div>
-          </div>
-        </div>
-        <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/tw.png'>
-
-      </a>
-    </div>
-    <div class='swanky_title__social'>
-      <a href='https://www.codepen.io/jcoulterdesign/' target='_blank'>
-        <div class='slide'>
-          <div class='arrow'>
-            <div class='stem'></div>
-            <div class='point'></div>
-          </div>
-        </div>
-        <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/cp.png'>
-        Add review banner as a feature
-      </a>
-    </div>
-  </div>
+  <div class="mainMenuBody">
 
 
-
-  <!-- /////////// Begin Dropdown //////////// -->
+  <h1>Featured Parmeals</h1>
+  <p>A mix of our favorite meals</p>
+<button ui-sref="addMeal" name="button">addMeal</button>
 
 
 
@@ -50,88 +58,27 @@
 
 
 
-  <div class='swanky_wrapper'>
-    <input id='Dashboard' name='radio' type='radio'>
-    <label for='Dashboard'>
-      <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/dash.png'>
-      <span>idk</span>
-      <div class='lil_arrow'></div>
-      <div class='bar'></div>
-      <div class='swanky_wrapper__content'>
-        <ul>
-          <li>Tools</li>
-          <li>Reports</li>
-          <li>Analytics</li>
-          <li>Code Blocks</li>
-        </ul>
-      </div>
-    </label>
-    <input id='Sales' name='radio' type='radio'>
-    <label for='Sales'>
-      <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/del.png'>
-      <span>Order Meals</span>
-      <div class='lil_arrow'></div>
-      <div class='bar'></div>
-      <div class='swanky_wrapper__content'>
-        <ul>
-          <li>Featured</li>
-          <li>Search</li>
-          <li>Recommend-Machine</li>
-        </ul>
-      </div>
-    </label>
-    <input id='Messages' name='radio' type='radio'>
-    <label for='Messages'>
-      <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/mess.png'>
-      <span>My Meals</span>
-      <div class='lil_arrow'></div>
-      <div class='bar'></div>
-      <div class='swanky_wrapper__content'>
-        <ul>
-          <li>My Meals</li>
-          <li>Manage Plans</li>
-          <li>Taken Orders</li>
-          <li>Requested Orders</li>
 
-        </ul>
-      </div>
-    </label>
-    <input id='Users' name='radio' type='radio'>
-    <label for='Users'>
-      <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/users.png'>
-      <span>Cart</span>
-      <div class='lil_arrow'></div>
-      <div class='bar'></div>
-      <div class='swanky_wrapper__content'>
-        <ul>
-          <li>Manage Cart</li>
-          <li>Current MealPlans</li>
-          <li>Upcoming Meals</li>
-          <li>Past Meals</li>
-        </ul>
-      </div>
-    </label>
-    <input id='Settings' radio='radio' type='radio'>
-    <label for='Settings'>
-      <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/set.png'>
-      <span>Settings</span>
-      <div class='lil_arrow'></div>
-      <div class='swanky_wrapper__content'>
-        <ul>
-          <li>Contact</li>
-          <li>Edit Profile</li>
-          <li>Log Out</li>
-        </ul>
-      </div>
-    </label>
-  </div>
-  <!-- /////////// End Dropdown //////////// -->
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- / My Footer -->
 
-<div class='love'>
-  <p>Made with <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/love_copy.png" /> by <a href='https://www.google.com' target='_blank'> Shiv Patel </a></p>
-</div>
+
 
 
 
@@ -143,8 +90,7 @@
 
 
 
-        <h2> MAIN TITLE</h2>
-        <h3> Test Title 2</h3>
+
 <!--TEST CODE FOR SEARCH BOX -->
 <input type="username" ng-model="searchBox">
 
@@ -163,23 +109,23 @@
 
 <!--- how to display the data (meals) from the SQL database in postico  play -->
 
-      <div ng-repeat="food in meals | filter:searchBox track by food.id" > <!--- need to track by the meals id --->
-        <h2>TITLE: {{ food.mealname }}</h2>
-
-        <img  style="height:250px; width: 250px; " ng-src="{{ food.image }}">
-        <h6> Vegan: {{food.vegan}}</h6>
-        <h4>DESCRIPTION: {{ food.description}}</h4>
+    <div ng-repeat="food in meals | filter:searchBox track by food.id" > <!--- need to track by the meals id --->
+        <img class="mainPicRepeat" ng-src="{{ food.image }}">
+        <h2>{{ food.mealname }}</h2>
+        <h6>{{ food.vegan }}</h6>
+        <h4>{{ food.description }}</h4>
 <!--Add NG-if auth-id then show this here  -->
-        <button ng-if="food.authid == authid" ui-sref="updatemeal({ id: food.id })">Update Meal</button>
+<button ng-if="food.authid == authid" ui-sref="updatemeal({ id: food.id })">Update Meal</button>
+<button ng-if="food.authid != authid" ng-click="addToCart(food.mealname, food.schedule, food.mealcost, food.id, food.authid)">Add to Cart---table</button>
+<hr />
 
-        <button ng-if="food.authid != authid" ng-click="addToCart(food.mealname, food.schedule, food.mealcost, food.id, food.authid)">Add to Cart---table</button>
-        <hr />
-      </div>
-
-
-
-        <button ui-sref="cart">go to checkoutcart</button>
+    </div>
 
 
 
+ <button ui-sref="cart">go to checkoutcart</button>
+
+          <div class='love'>
+          <p>Made with <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/love_copy.png" /> by <a href='https://www.google.com' target='_blank'> Shiv Patel </a></p>
+          </div>
 </div>
