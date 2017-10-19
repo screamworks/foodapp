@@ -1,3 +1,7 @@
+/* GENERAL GLOBAL CSS */
+
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
 
 h1 {
     margin: 0;
@@ -12,6 +16,8 @@ body {
   padding: 0;
 
 }
+
+/* THIS IS THE LANDING PAGE FOR PARMEAL */
 
 .homeWall {
   background: url("https://images.unsplash.com/photo-1457347876270-97799484c564?dpr=1&auto=compress,format&fit=crop&w=750&h=&q=80&cs=tinysrgb&crop=")no-repeat center center fixed;
@@ -169,8 +175,90 @@ nav {
 }
 
 
+
+
+
+
+/* NAVBAR  */
+
+nav {
+  background: rgba(0, 120, 187, .3);
+  margin: 0;
+  border-radius: 1%;
+}
+
+nav h1 {
+  display: none;
+}
+nav ul {
+  /*border-left: 1px solid #005788;*/
+  /*border-right: 1px solid #005788;*/
+  border-radius: 1%;
+  list-style: none;
+  margin: 0 auto;
+  max-width: 900px;
+  overflow: hidden;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+nav ul li {
+  box-flex: 1;
+}
+nav ul li a {
+  border-left: 1px solid #005788;
+  border-right: 1px solid #005788;
+  /*border-right: 1px solid #09e;*/
+  color: #fff;
+  display: block;
+  line-height: 20px;
+  padding: 12px;
+  text-align: center;
+  text-decoration: none;
+}
+nav ul li a:hover {
+  /*background: #005788;*/
+  background: rgba(16, 196, 254, .4)
+}
+@media only screen and (max-width: 600px) {
+  nav h1 {
+    border-bottom: 1px solid #09e;
+    color: #fff;
+    display: block;
+    /*font: 16px serif;*/
+    font: 16px 'Open Sans', sans-serif;
+    line-height: 20px;
+    letter-spacing: 2px;
+    margin: 0 auto;
+    padding: 12px 0;
+    text-align: center;
+    width: 96%;
+  }
+  nav h1:hover + ul,
+  nav h1 + ul:hover {
+    max-height: 300px;
+  }
+  nav ul {
+    display: block;
+    max-height: 0;
+    transition: max-height 200ms;
+  }
+  nav ul li a {
+    padding-left: 12px;
+    text-align: left;
+  }
+}
+
+
+
+
+/* MAIN MENU (FEATURED MEALS, ETC) */
+
+
 .mainMenuBody {
     background-color: #1F2739;
+    font-family: 'Open Sans', sans-serif;
     color: white;
     padding: 0;
     margin: 0;
@@ -183,46 +271,13 @@ nav {
 }
 
 
+.featuredTitle {
+    font-size: 100em;
+    text-align: center;
+    color: rgb(255, 70, 114);
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* footer love */
 
 
 
@@ -260,6 +315,10 @@ nav {
 .brand img {
   width: 30px;
 }
+
+
+
+/* add Meals Page */
 
 .addMeal {
   text-align: center;

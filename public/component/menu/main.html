@@ -1,3 +1,4 @@
+<div class="mainMenuBody">
 
 
 
@@ -5,11 +6,17 @@
 
 
 
-
-
-
-
-
+<nav>
+  <h1>DASHBOARD</h1>
+  <ul>
+    <li><a href="">menu</a></li>
+    <li><a href="">add meals</a></li>
+    <li><a href="">past orders</a></li>
+    <li><a href="">about</a></li>
+    <li><a href="">cart</a></li>
+    <li><a href="">sign out</a></li>
+  </ul>
+</nav>
 
 
 
@@ -44,58 +51,16 @@
 
 
 <div ng-controller="mainCtrl">
-  <div class="mainMenuBody">
+
+  <div class="featuredTitle">
+   <h1>Featured Parmeals</h1>
+   <p>A mix of our favorite meals</p>
+  </div>
 
 
-  <h1>Featured Parmeals</h1>
-  <p>A mix of our favorite meals</p>
-<button ui-sref="addMeal" name="button">addMeal</button>
+  <button ui-sref="addMeal" name="button">addMeal</button>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- / My Footer -->
-
-
-
-
-
-<!-- <form name="form">
-            <img style="width: 300px;" ngf-thumbnail="image || '../assets/img/placeholder.png'">
-            <button name="image" ngf-select ng-model="image">Upload image</button>
-            <button ng-click="submit(image)">Submit</button>
-        </form> -->
-
-
-
-
-<!--TEST CODE FOR SEARCH BOX -->
-<input type="username" ng-model="searchBox">
-
-
-
+  <input type="username" ng-model="searchBox">
 <!-- not working -->
         <!-- <h1 ng-if="!user.authid">{{user}}</h1>
         <div ng-if="user.authid">
@@ -104,28 +69,21 @@
         </div> -->
 <!--- username needs to show above ^^^^ --->
 
-
-
-
 <!--- how to display the data (meals) from the SQL database in postico  play -->
-
     <div ng-repeat="food in meals | filter:searchBox track by food.id" > <!--- need to track by the meals id --->
         <img class="mainPicRepeat" ng-src="{{ food.image }}">
         <h2>{{ food.mealname }}</h2>
         <h6>{{ food.vegan }}</h6>
         <h4>{{ food.description }}</h4>
 <!--Add NG-if auth-id then show this here  -->
-<button ng-if="food.authid == authid" ui-sref="updatemeal({ id: food.id })">Update Meal</button>
-<button ng-if="food.authid != authid" ng-click="addToCart(food.mealname, food.schedule, food.mealcost, food.id, food.authid)">Add to Cart---table</button>
-<hr />
-
+  <button ng-if="food.authid == authid" ui-sref="updatemeal({ id: food.id })">Update Meal</button>
+  <button ng-if="food.authid != authid" ng-click="addToCart(food.mealname, food.schedule, food.mealcost, food.id, food.authid)">Add to Cart---table</button>
+  <hr />
     </div>
 
+  <button ui-sref="cart">go to checkoutcart</button>
 
-
- <button ui-sref="cart">go to checkoutcart</button>
-
-          <div class='love'>
-          <p>Made with <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/love_copy.png" /> by <a href='https://www.google.com' target='_blank'> Shiv Patel </a></p>
-          </div>
+        <div class='love'>
+        <p>Made with <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/love_copy.png" /> by <a href='https://www.google.com' target='_blank'> Shiv Patel </a></p>
+        </div>
 </div>
