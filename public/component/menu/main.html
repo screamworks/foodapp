@@ -6,7 +6,7 @@
 
 
 
-<nav>
+<nav class="fixedNav">
   <h1>DASHBOARD</h1>
   <ul>
     <li><a ui-sref="main">menu</a></li>
@@ -124,7 +124,7 @@
         <h4>{{ food.mealname }}</h4>
         <h5 class="red">{{ food.description }}</h5>
         <h5 class="babyBlue">${{ food.mealcost }}</h5>
-        <h6 class="yellow">schedule: {{ food.schedule}}</h6>
+        <h5 class="yellow">schedule: {{ food.schedule}}</h5>
         <h6 class="checkboxPosition">vegan: {{ food.vegan }}</h6>
         <h6 class="checkboxPosition">veg: {{ food.vegetarian }}</h6>
         <h6 class="checkboxPosition">nonVeg: {{ food.nonveg}}</h6>
@@ -133,15 +133,15 @@
         <h6 class="checkboxPosition">nuts: {{ food.nuts }}</h6>
       </div>
 <!--Add NG-if auth-id then show this here  -->
-  <button ng-if="food.authid == authid" ui-sref="updatemeal({ id: food.id })">Update Meal</button>
-  <button ng-if="food.authid != authid" ng-click="addToCart(food.mealname, food.schedule, food.mealcost, food.id, food.authid)">add to cart</button>
+  <button class="addToCartButton" ng-if="food.authid == authid" ui-sref="updatemeal({ id: food.id })">UPDATE</button>
+  <button class="addToCartButton" ng-if="food.authid != authid" ng-click="addToCart(food.mealname, food.schedule, food.mealcost, food.id, food.authid)">ADD TO CART</button>
   <!-- <hr /> -->
   <br>
   <br>
   <br>
     </div>
 </div>
-  <button ui-sref="cart">go to checkoutcart</button>
+
 
         <div class='love'>
         <p>Made with <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/love_copy.png" /> by <a href='https://www.google.com' target='_blank'> Shiv Patel </a></p>
