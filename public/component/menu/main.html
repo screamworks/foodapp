@@ -9,12 +9,12 @@
 <nav>
   <h1>DASHBOARD</h1>
   <ul>
-    <li><a href="">menu</a></li>
+    <li><a ui-sref="main">menu</a></li>
     <li><a ui-sref="addMeal">add meals</a></li>
-    <li><a href="">past orders</a></li>
-    <li><a href="">about</a></li>
-    <li><a href="">cart</a></li>
-    <li><a href="">sign out</a></li>
+    <li><a ui-sref="mealsOrdered">past orders</a></li>
+    <li><a  ui-sref="about">about</a></li>
+    <li><a ui-sref="cart">cart</a></li>
+    <li><a href="/auth/logout">sign out</a></li>
   </ul>
 </nav>
 
@@ -116,19 +116,22 @@
 <div class="flexWrapMainPage">
 
 
+
+
     <div ng-repeat="food in meals | filter:searchBox track by food.id" > <!--- need to track by the meals id --->
+        <div class="positionMainPageGrid">
         <img class="mainPicRepeat" ng-src="{{ food.image }}">
         <h4>{{ food.mealname }}</h4>
         <h5 class="red">{{ food.description }}</h5>
         <h5 class="babyBlue">${{ food.mealcost }}</h5>
-        <h6>schedule: {{ food.schedule}}</h6>
-        <h6>vegan: {{ food.vegan }}</h6>
-        <h6>veg: {{ food.vegetarian }}</h6>
-        <h6>nonVeg: {{ food.nonveg}}</h6>
-        <h6>glutenFree: {{ food.glutenFree}}</h6>
-        <h6>soy: {{ food.soy }}</h6>
-        <h6>nuts: {{ food.nuts }}</h6>
-
+        <h6 class="yellow">schedule: {{ food.schedule}}</h6>
+        <h6 class="checkboxPosition">vegan: {{ food.vegan }}</h6>
+        <h6 class="checkboxPosition">veg: {{ food.vegetarian }}</h6>
+        <h6 class="checkboxPosition">nonVeg: {{ food.nonveg}}</h6>
+        <h6 class="checkboxPosition">glutenFree: {{ food.glutenFree}}</h6>
+        <h6 class="checkboxPosition">soy: {{ food.soy }}</h6>
+        <h6 class="checkboxPosition">nuts: {{ food.nuts }}</h6>
+      </div>
 <!--Add NG-if auth-id then show this here  -->
   <button ng-if="food.authid == authid" ui-sref="updatemeal({ id: food.id })">Update Meal</button>
   <button ng-if="food.authid != authid" ng-click="addToCart(food.mealname, food.schedule, food.mealcost, food.id, food.authid)">add to cart</button>
