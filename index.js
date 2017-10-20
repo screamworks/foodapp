@@ -17,7 +17,8 @@ const { domain, clientID, clientSecret } = require('./server/config').auth0;
 const port = 3001;
 
 // our database connection information
-const connectionString = `postgres://${dbUser}@localhost/${database}`;
+// const connectionString = `postgres://${dbUser}@localhost/${database}`;
+const connectionString = "postgres://eazxttbhphdctl:a4afe2ce7f91e176fac0eae2d8c6e7d035633bd52cb5f5b9901564398c11c7e5@ec2-54-235-250-15.compute-1.amazonaws.com:5432/db2ah0fqjibv9v?ssl=true";
 
 // App Declaration
 const app = express();
