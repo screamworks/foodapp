@@ -14,7 +14,7 @@ const { dbUser, database } = require('./server/config').db;
 const { domain, clientID, clientSecret } = require('./server/config').auth0;
 
 // define port
-const port = 3001;
+const port = require('./server/config').port || 3001;
 
 // our database connection information
 // const connectionString = `postgres://${dbUser}@localhost/${database}`;
