@@ -70,7 +70,7 @@ angular.module('servproj').config(($urlRouterProvider, $stateProvider) => {
 
     .state('updatemeal', {
       url: '/updatemeal/:id',
-      templateUrl: '/component/menu/updatemeal.html',
+      templateUrl: '/component/menu/updateMeal.html',
       controller: 'mainCtrl',
       resolve: {
         user: (mainSrvc, $state) => mainSrvc.getUser()
