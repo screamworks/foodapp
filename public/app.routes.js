@@ -46,7 +46,12 @@ angular.module('servproj').config(($urlRouterProvider, $stateProvider) => {
       resolve: {
         getMeals($http) {
           return $http.get('/api/menu');
-        }
+        },
+          user: (mainSrvc, $state) => mainSrvc.getUser()
+            .then(response => response.data)
+            .catch(err =>
+              $state.go('home')
+            )         
       }
     })
 

@@ -1,12 +1,20 @@
 
-<h1>All meals past to present</h1>
+
+<div class="mealsOrderedBG">
+
+<br>
+<br>
+<h1>Order History</h1>
 
 
 <div ng-repeat="past in orderedMeals" >
-  <h2>TITLE: {{ past.mealname }}</h2>
-  <h6> quantity {{past.quantity}}</h6>
-  <h4> foodid {{ past.foodid}}</h4>
-  <h5>cost {{ past.mealcost }}</h5>
-
+  <h3>{{ past.mealname }}</h3>
+  <h4> quantity: {{past.quantity}}</h4>
+  <h4> cost {{ past.mealcost }}</h4>
+<br>
   <hr />
+<br>
+</div>
+<br>
+<br>
 </div>

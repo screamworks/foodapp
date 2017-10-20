@@ -479,3 +479,12 @@ nav ul li a:hover {
   color: black;
   padding: 1px;
 }
+
+
+
+/* meal history */
+
+.mealsOrderedBG {
+  background: #1f2739;
+  padding-left: 30px;
+}
