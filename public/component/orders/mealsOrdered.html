@@ -1,16 +1,38 @@
 
+<nav class="fixedNav">
+  <h1>DASHBOARD</h1>
+  <ul>
+    <li><a ui-sref="main">menu</a></li>
+    <li><a ui-sref="addMeal">add meals</a></li>
+    <li><a ui-sref="mealsOrdered">past orders</a></li>
+    <li><a  ui-sref="about">about</a></li>
+    <li><a ui-sref="cart">cart</a></li>
+    <li><a href="/auth/logout">sign out</a></li>
+  </ul>
+</nav>
+
+
+
+
+
 
 <div class="mealsOrderedBG">
 
-<br>
-<br>
-<h1>Order History</h1>
 
+
+
+
+<br>
+<br>
+<br>
+<br>
+<h1 class="white">Order History</h1>
+<br>
 
 <div ng-repeat="past in orderedMeals" >
-  <h3>{{ past.mealname }}</h3>
-  <h4> quantity: {{past.quantity}}</h4>
-  <h4> cost {{ past.mealcost }}</h4>
+  <h3 class="babyBlue">{{ past.mealname }}</h3>
+  <h4 class="red2"> quantity: {{past.quantity}}</h4>
+  <h4 class="yellow"> cost:  ${{ past.mealcost }}</h4>
 <br>
   <hr />
 <br>

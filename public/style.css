@@ -20,7 +20,29 @@ body {
 
 .babyBlue {
   color: #10C4FE;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
 }
+
+.red2 {
+  font-family: 'Open Sans', sans-serif;
+  color: #FF4672;
+  font-weight: 300;
+}
+
+.white {
+  color: rgb(167, 161, 174);
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+
+.yellow {
+  font-family: 'Open Sans', sans-serif;
+  color: #FBFF28;
+  font-weight: 300;
+}
+
+
 
 /* THIS IS THE LANDING PAGE FOR PARMEAL */
 
@@ -321,11 +343,7 @@ nav ul li a:hover {
   padding: 45px;
 }
 
-.yellow {
-  font-family: 'Open Sans', sans-serif;
-  color: #FBFF28;
-  font-weight: 300;
-}
+
 
 .red {
     font-family: 'Open Sans', sans-serif;
@@ -421,6 +439,7 @@ nav ul li a:hover {
   margin: 0;
   padding: 0;
   height: 220vh;
+  /*height: -webkit-fill-available;*/
   background: #1F2739;
   text-align: center;
   letter-spacing: 1px;
@@ -431,12 +450,21 @@ nav ul li a:hover {
   padding-top: 20px;
   padding-bottom: 8px;
   letter-spacing: 3px;
+  font-family: "Open Sans", sans-serif;
+  /*font-family: 'Josefin Sans', sans-serif;*/
+  font-weight: 300;
 }
 
 .howToAddMeal {
   padding-left: 15px;
   padding-right: 15px;
-    color: #10C4FE;
+  color: #10C4FE;
+  font-family: 'Josefin Sans', sans-serif;
+  /*font-family: "Open Sans", sans-serif;*/
+
+  font-weight: 300;
+  letter-spacing: 2px;
+  font-size: 15px;
 }
 
 .addMealForm {
@@ -487,4 +515,57 @@ nav ul li a:hover {
 .mealsOrderedBG {
   background: #1f2739;
   padding-left: 30px;
+  padding-right: 30px;
+  color: rgb(167, 161, 174);
+}
+
+
+/* about page */
+
+.aboutPageBG {
+  background: #1f2739;
+  padding: 30px;
+  height: 200vh;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+
+
+/* cart/checkout page  */
+
+.deleteFromCart {
+    background-color: #1F2739;
+    /*background-color: rgba(26, 165, 249, .9);*/
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px 4px rgba(255, 70, 114, 0.4);
+    /*font-family: 'Open Sans', sans-serif;*/
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.7em;
+    font-weight: 300;
+    padding: 5px;
+    border-color: #1F2739;
+    letter-spacing: 2px;
+    border: 1px solid #1F2739;
+    color: white;
+}
+
+.checkoutCenter {
+  text-align: center;
+}
+
+
+.payBtn {
+    background-color: #1F2739;
+    /*background-color: rgba(26, 165, 249, .9);*/
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px 5px rgba(26, 165, 249, .6);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.8em;
+    font-weight: 400;
+    padding: 8px;
+    border-color: #1F2739;
+    letter-spacing: 3px;
+    border: 1px solid #1F2739;
+    color: white;
 }
