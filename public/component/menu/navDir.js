@@ -4,6 +4,6 @@ angular.module('servproj').directive('navDir', function(){
 
     restrict: 'E',
 
-    templateUrl: 'component/menu/navDir.js'
+    templateUrl: './component/menu/nav.html'
   }
 })

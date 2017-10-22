@@ -3,22 +3,7 @@
 
 
 
-
-
-
-<nav class="fixedNav">
-  <h1>DASHBOARD</h1>
-  <ul>
-    <li><a ui-sref="main">menu</a></li>
-    <li><a ui-sref="addMeal">add meals</a></li>
-    <li><a ui-sref="mealsOrdered">past orders</a></li>
-    <li><a  ui-sref="about">about</a></li>
-    <li><a ui-sref="cart">cart</a></li>
-    <li><a href="/auth/logout">sign out</a></li>
-  </ul>
-</nav>
-
-
+<nav-Dir></nav-Dir>
 
 
 
@@ -125,14 +110,13 @@
         <h5 class="red">{{ food.description }}</h5>
         <h5 class="babyBlue">${{ food.mealcost }}</h5>
         <h5 class="yellow">Quantity: {{ food.schedule}}</h5>
-        <h6 class="checkboxPosition">vegan: {{ food.vegan }}</h6>
-        <h6 class="checkboxPosition">veg: {{ food.vegetarian }}</h6>
-        <h6 class="checkboxPosition">nonVeg: {{ food.nonveg}}</h6>
-        <h6 class="checkboxPosition">glutenFree: {{ food.glutenFree}}</h6>
-        <h6 class="checkboxPosition">soy: {{ food.soy }}</h6>
-        <h6 class="checkboxPosition">nuts: {{ food.nuts }}</h6>
+        <h6 class="checkboxPosition" ng-if="food.vegan == true">vegan: {{ food.vegan }}</h6>
+        <h6 class="checkboxPosition" ng-if="food.vegetarian == true">veg: {{ food.vegetarian }}</h6>
+        <h6 class="checkboxPosition" ng-if="food.nonveg == true">nonVeg: {{ food.nonveg}}</h6>
+        <h6 class="checkboxPosition" ng-if="food.glutenFree == true">glutenFree: {{ food.glutenFree}}</h6>
+        <h6 class="checkboxPosition" ng-if="food.soy == true">soy: {{ food.soy }}</h6>
+        <h6 class="checkboxPosition" ng-if="food.nuts == true">nuts: {{ food.nuts }}</h6>
       </div>
-<!--Add NG-if auth-id then show this here  -->
   <button class="addToCartButton" ng-if="food.authid == authid" ui-sref="updatemeal({ id: food.id })">UPDATE</button>
   <button class="addToCartButton" ng-if="food.authid != authid" ng-click="addToCart(food.mealname, food.schedule, food.mealcost, food.id, food.authid)">ADD TO CART</button>
   <!-- <hr /> -->
