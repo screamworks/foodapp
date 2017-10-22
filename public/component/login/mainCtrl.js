@@ -175,7 +175,4 @@ $scope.addToCart = (fname, fschedule, fmealcost, fid, fauthid) => {
 
 
 
-
-
-
 })

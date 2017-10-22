@@ -133,7 +133,12 @@ nav {
 }
 
 
-
+.love{ 
+       position: fixed;
+       text-align: center;
+       bottom: 0px;
+       width: 100%;
+   }
 
 
 
@@ -382,53 +387,6 @@ nav ul li a:hover {
     border: 1px solid #1F2739;
 }
 
-
-
-
-
-
-
-
-
-
-/* footer love */
-
-
-
-
-
-.love {
-  position: absolute;
-  right: 20px;
-  bottom: 0px;
-  font-size: 11px;
-  font-weight: normal;
-}
-.love p {
-  color: white;
-  font-weight: normal;
-  font-family: "Open Sans", sans-serif;
-}
-.love a {
-  color: white;
-  font-weight: 700;
-  text-decoration: none;
-}
-.love img {
-  position: relative;
-  top: 3px;
-  margin: 0px 4px;
-  width: 10px;
-}
-
-.brand {
-  position: absolute;
-  left: 20px;
-  bottom: 14px;
-}
-.brand img {
-  width: 30px;
-}
 
 
 

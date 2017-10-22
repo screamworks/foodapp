@@ -26,8 +26,8 @@
 
 <div ng-repeat="khana in getCurrentCart" >
   <h3 class="babyBlue">{{ khana.mealname }}</h3>
-  <h4 class="red2"> quantity: {{ khana.quantity }}</h4>
-  <h4 class="yellow"> mealcost: ${{ khana.mealcost}}</h4>
+  <h4 class="red2"> Quantity: {{ khana.quantity }}</h4>
+  <h4 class="yellow"> Cost: ${{ khana.mealcost}}</h4>
   <br>
   <button  class="deleteFromCart" ng-click="deleteFromCart(khana.foodid); reload();">DELETE</button>
   <hr/>
