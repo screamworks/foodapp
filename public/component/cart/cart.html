@@ -29,7 +29,7 @@
   <h4 class="red2"> quantity: {{ khana.quantity }}</h4>
   <h4 class="yellow"> mealcost: ${{ khana.mealcost}}</h4>
   <br>
-  <button  class="deleteFromCart" ng-click=deleteFromCart(khana.foodid)>DELETE</button>
+  <button  class="deleteFromCart" ng-click="deleteFromCart(khana.foodid); reload();">DELETE</button>
   <hr/>
 </div>
 
