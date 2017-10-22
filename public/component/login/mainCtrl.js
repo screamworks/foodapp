@@ -4,11 +4,10 @@ angular.module('servproj').controller('mainCtrl', function (mainSrvc, $scope, $h
 
 $scope.id = $stateParams.id
 
- /////////////////$stateParam Value;
+
 
 $scope.getCurrentMeal = function(id) {
   return $http.get('/current/meal/?id='+id).then(function(res) {
-    // $scope.currentMeal = res.data[0];
     return res.data[0];
   })
 }
@@ -160,9 +159,6 @@ $scope.addToCart = (fname, fschedule, fmealcost, fid, fauthid) => {
 
 
  $scope.reloadPage = function(){window.location.reload();}
-
-
-
 
 
 

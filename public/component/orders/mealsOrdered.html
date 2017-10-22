@@ -1,16 +1,27 @@
 
+<nav-Dir></nav-Dir>
+
+
+
+
 
 <div class="mealsOrderedBG">
 
-<br>
-<br>
-<h1>Order History</h1>
 
+
+
+
+<br>
+<br>
+<br>
+<br>
+<h1 class="white">Order History</h1>
+<br>
 
 <div ng-repeat="past in orderedMeals" >
-  <h3>{{ past.mealname }}</h3>
-  <h4> quantity: {{past.quantity}}</h4>
-  <h4> cost {{ past.mealcost }}</h4>
+  <h3 class="babyBlue">{{ past.mealname }}</h3>
+  <h4 class="red2"> Quantity: {{past.quantity}}</h4>
+  <h4 class="yellow"> Cost:  ${{ past.mealcost }}</h4>
 <br>
   <hr />
 <br>

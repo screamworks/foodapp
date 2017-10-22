@@ -1,18 +1,36 @@
-<h1>checkout</h1>
 
-<h5>show cart items, price, quantity, using string interpolation and then do some math to do total price + total quantity</h5>
+<nav-Dir></nav-Dir>
+
+<div class="mealsOrderedBG">
 
 
-<button ui-sref="main">HOME PAGE</button>
+<br>
+<br>
+<br>
+<h1 class="white">checkout</h1>
+
+
+
+<br>
+
 
 <div ng-repeat="khana in getCurrentCart" >
-  <h2>title: {{ khana.mealname }}</h2>
-  <h6> quantity: {{ khana.quantity }}</h6>
-  <h4> mealcost: {{ khana.mealcost}}</h4>
-  <button ng-click=deleteFromCart(khana.foodid)>Delete From Cart</button>
+  <h3 class="babyBlue">{{ khana.mealname }}</h3>
+  <h4 class="red2"> Quantity: {{ khana.quantity }}</h4>
+  <h4 class="yellow"> Cost: ${{ khana.mealcost}}</h4>
+  <br>
+  <button  class="deleteFromCart" ng-click="deleteFromCart(khana.foodid); reload();">DELETE</button>
   <hr/>
 </div>
 
-<!---TEST CODE FOR STRIPE API--->
-<h1>Your Total is: {{ total }} </h1>
-<button ng-click="openPayment(); cartToOrder(getCurrentCart); emptyCart(getCurrentCart);">pay with card</button>
+<br>
+  <div class="checkoutCenter">
+<h3 class="white">Your Total is: <span class="babyBlue">${{ total }}</span></h3>
+<br>
+<button class="payBtn" ng-click="openPayment(); cartToOrder(getCurrentCart); emptyCart(getCurrentCart);">PAY WITH CARD</button>
+  </div>
+<br>
+<br>
+<br>
+<br>
+</div>
