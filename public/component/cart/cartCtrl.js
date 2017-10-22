@@ -30,7 +30,7 @@ $scope.openPayment = function(name, desc) {
        }
        });
        handler.open({
-            name: 'ParMeal',
+            name: 'Parameal',
             description: "Meal-Solutions",
             amount: $scope.total * 100
         });
