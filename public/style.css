@@ -76,7 +76,6 @@ body {
 
 .outerHomeTitle {
    display: flex;
-
    width: 100vw;
 }
 
@@ -108,7 +107,6 @@ body {
   /*color: #F1F3F6;*/
   color: black;
   font-size: 1.5em;
-  /*font-family: 'Josefin Sans', sans-serif;*/
 
 }
 nav {
