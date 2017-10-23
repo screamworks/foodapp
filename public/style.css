@@ -475,7 +475,7 @@ nav ul li a:hover {
     background-color: #1F2739;
     /*background-color: rgba(26, 165, 249, .9);*/
     border-radius: 5px;
-    box-shadow: 0px 0px 20px 5px rgba(26, 165, 249, .6);
+    box-shadow: 0px 0px 20px 1px rgba(26, 165, 249, .6);
     /*font-family: 'Open Sans', sans-serif;*/
     /*font-family: 'Josefin Sans', sans-serif;*/
     font-size: 0.8em;
@@ -487,44 +487,20 @@ nav ul li a:hover {
     color: white;
 
 
-    position: absolute;
-      text-decoration: none;
-      z-index: 1;
-      overflow: hidden;
-      left:50%;
-      transform:translate(-50%);
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+
 }
 
-
-.submitMeal:before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #EDDD31;
-  z-index: -1;
-  -webkit-transform-origin: 50% 100%;
-          transform-origin: 50% 100%;
-  -webkit-transform: translate(-52%, -102%) rotate(-45deg) scale(5);
-          transform: translate(-52%, -102%) rotate(-45deg) scale(5);
-  -webkit-transition: 0.2s all ease-in;
-  transition: 0.2s all ease-in;
-}
 .submitMeal:hover {
+  box-shadow: 0px 0px 20px 8px rgba(26, 165, 249, .6);
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: #EDDD31;
   color: black;
-  font-size: 0.8em;
-  font-weight: 400;
-  padding: 7px;
-  border-color: #1F2739;
-  letter-spacing: 3px;
-  border: 1px solid #1F2739;
 
-}
-.submitMeal:hover::before {
-  -webkit-transform: translate(50%, 0) rotate(-45deg) scale(5);
-          transform: translate(50%, 0) rotate(-45deg) scale(5);
+
 }
 
 
