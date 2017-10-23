@@ -46,12 +46,12 @@
         <h5 class="red">{{ food.description }}</h5>
         <h5 class="babyBlue">${{ food.mealcost }}</h5>
         <h5 class="yellow">Serves: {{ food.schedule}}</h5>
-        <h6 class="checkboxPosition" ng-if="food.vegan == true">vegan: {{ food.vegan }}</h6>
-        <h6 class="checkboxPosition" ng-if="food.vegetarian == true">veg: {{ food.vegetarian }}</h6>
-        <h6 class="checkboxPosition" ng-if="food.nonveg == true">nonVeg: {{ food.nonveg}}</h6>
-        <h6 class="checkboxPosition" ng-if="food.glutenFree == true">glutenFree: {{ food.glutenFree}}</h6>
-        <h6 class="checkboxPosition" ng-if="food.soy == true">soy: {{ food.soy }}</h6>
-        <h6 class="checkboxPosition" ng-if="food.nuts == true">nuts: {{ food.nuts }}</h6>
+        <h6 class="checkboxPosition" ng-if="food.vegan == true">Vegan: {{ food.vegan }}</h6>
+        <h6 class="checkboxPosition" ng-if="food.vegetarian == true">Vegetarian: {{ food.vegetarian }}</h6>
+        <h6 class="checkboxPosition" ng-if="food.nonveg == true">Non-Veg: {{ food.nonveg}}</h6>
+        <h6 class="checkboxPosition" ng-if="food.glutenfree == true">Gluten-Free: {{ food.glutenfree}}</h6>
+        <h6 class="checkboxPosition" ng-if="food.soy == true">Soy: {{ food.soy }}</h6>
+        <h6 class="checkboxPosition" ng-if="food.nuts == true">Nuts: {{ food.nuts }}</h6>
       </div>
   <button class="addToCartButton" ng-if="food.authid == authid" ui-sref="updatemeal({ id: food.id })">UPDATE</button>
   <button class="addToCartButton" ng-if="food.authid != authid" ng-click="addToCart(food.mealname, food.schedule, food.mealcost, food.id, food.authid)">ADD TO CART</button>
