@@ -1,10 +1,14 @@
 <div ng-controller="mainCtrl">
 
+<nav-Dir></nav-Dir>
+
+
+
   <div class="addMealBG">
 
 
 
-<nav-Dir></nav-Dir>
+<!-- <nav-Dir></nav-Dir> -->
 
 
 
@@ -49,7 +53,7 @@
       <input type="checkbox" placeholder="Enter Price" name="price" ng-model="nuts" required>
       <br>
       <br>
-        <label><b>Quantity:</b></label>
+        <label><b>Serves:</b></label>
       <select class="scheduleSelect" ng-model="schedule">
       <option class="scheduleSelect">1</option>
       <option class="scheduleSelect">2</option>
@@ -68,6 +72,7 @@
   <form name="form">
               <img style="width: 300px;" ngf-thumbnail="image || '../assets/img/placeholder.png'">
               <button class="addToCartButton" name="image" ngf-select ng-model="image">Upload Image (required)</button>
+              <br>
               <br>
               <br>
               <button class="submitMeal" ng-click="submit(mealName, mealCost, description, vegan, vegetarian, nonVeg, glutenFree, soy, nuts, schedule, image, authid)">Submit</button>
