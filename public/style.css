@@ -158,6 +158,13 @@ nav {
 
 /* NAVBAR  */
 
+/*.fixedNav {
+  position: fixed;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}*/
+
 nav {
   /*background: rgba(0, 120, 187, .2);*/
     background: rgba(24, 88, 117, .9);
@@ -277,12 +284,7 @@ nav ul li a:hover {
 
 /* search bar in main menu  */
 
-.fixedNav {
-  position: fixed;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0;
-}
+
 
 
 .cntr {
