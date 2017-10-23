@@ -278,7 +278,7 @@ nav ul li a:hover {
 /* search bar in main menu  */
 
 .fixedNav {
-  position: fixed;
+  /*position: fixed;*/
   width: 100%;
   margin: 0 auto;
   padding: 0;
