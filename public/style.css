@@ -524,6 +524,10 @@ nav ul li a:hover {
   color: rgb(167, 161, 174);
   /*height: -webkit-fill-available;*/
   height: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 
