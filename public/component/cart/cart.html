@@ -16,7 +16,7 @@
 
 <div ng-repeat="khana in getCurrentCart" >
   <h3 class="babyBlue">{{ khana.mealname }}</h3>
-  <h4 class="red2"> Quantity: {{ khana.quantity }}</h4>
+  <h4 class="red2"> Serves: {{ khana.quantity }}</h4>
   <h4 class="yellow"> Cost: ${{ khana.mealcost}}</h4>
   <br>
   <button  class="deleteFromCart" ng-click="deleteFromCart(khana.foodid); reload();">DELETE</button>
@@ -25,7 +25,7 @@
 
 <br>
   <div class="checkoutCenter">
-<h3 class="white">Your Total is: <span class="babyBlue">${{ total }}</span></h3>
+<h3 class="white">Your Total is: <span class="babyBlue">${{ total | number:2 }}</span></h3>
 <br>
 <button class="payBtn" ng-click="openPayment(); cartToOrder(getCurrentCart); emptyCart(getCurrentCart);">PAY WITH CARD</button>
   </div>

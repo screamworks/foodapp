@@ -1,38 +1,7 @@
 <div class="mainMenuBody">
 
 
-
-
 <nav-Dir></nav-Dir>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <div ng-controller="mainCtrl">
@@ -67,41 +36,8 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <!-- <button ui-sref="addMeal" name="button">addMeal</button> -->
-
-
-
-  <!-- <input type="username" ng-model="searchBox">   THIS IS THE SEARCHBOX -->
-
-
-<!-- not working -->
-        <!-- <h1 ng-if="!user.authid">{{user}}</h1>
-        <div ng-if="user.authid">
-            <h1>{{user.authid}}</h1>
-            <h1>{{user.username}}</h1>
-        </div> -->
-<!--- username needs to show above ^^^^ --->
-
 <!--- how to display the data (meals) from the SQL database in postico  play -->
 <div class="flexWrapMainPage">
-
-
-
 
     <div ng-repeat="food in meals | filter:searchBox track by food.id" > <!--- need to track by the meals id --->
         <div class="positionMainPageGrid">
@@ -109,7 +45,7 @@
         <h4>{{ food.mealname }}</h4>
         <h5 class="red">{{ food.description }}</h5>
         <h5 class="babyBlue">${{ food.mealcost }}</h5>
-        <h5 class="yellow">Quantity: {{ food.schedule}}</h5>
+        <h5 class="yellow">Serves: {{ food.schedule}}</h5>
         <h6 class="checkboxPosition" ng-if="food.vegan == true">vegan: {{ food.vegan }}</h6>
         <h6 class="checkboxPosition" ng-if="food.vegetarian == true">veg: {{ food.vegetarian }}</h6>
         <h6 class="checkboxPosition" ng-if="food.nonveg == true">nonVeg: {{ food.nonveg}}</h6>

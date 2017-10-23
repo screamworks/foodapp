@@ -133,7 +133,7 @@ nav {
 }
 
 
-.love{ 
+.love{
        position: fixed;
        text-align: center;
        bottom: 0px;
@@ -185,10 +185,15 @@ nav ul li a {
   padding-right: 15px;
   text-align: center;
   text-decoration: none;
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
 }
 nav ul li a:hover {
-  /*background: #005788;*/
-  background: rgba(16, 196, 254, .4)
+  background: rgba(16, 196, 254, .4);
+  box-shadow: 1px 1px 40px 1px rgba(26, 165, 249, .9);
+  text-decoration: none;
+  color: white;
 }
 @media only screen and (max-width: 600px) {
   nav h1 {
@@ -385,9 +390,15 @@ nav ul li a:hover {
     border-color: #1F2739;
     letter-spacing: 3px;
     border: 1px solid #1F2739;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
 }
 
+.addToCartButton:hover {
+  box-shadow: 1px 1px 30px 1px rgba(26, 165, 249, .9);
 
+}
 
 
 /* add Meals Page */
@@ -457,7 +468,49 @@ nav ul li a:hover {
     letter-spacing: 3px;
     border: 1px solid #1F2739;
     color: white;
+
+
+    position: absolute;
+      text-decoration: none;
+      z-index: 1;
+      overflow: hidden;
+      left:50%;
+      transform:translate(-50%);
 }
+
+
+.submitMeal:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #EDDD31;
+  z-index: -1;
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+  -webkit-transform: translate(-52%, -102%) rotate(-45deg) scale(5);
+          transform: translate(-52%, -102%) rotate(-45deg) scale(5);
+  -webkit-transition: 0.2s all ease-in;
+  transition: 0.2s all ease-in;
+}
+.submitMeal:hover {
+  color: black;
+  font-size: 0.8em;
+  font-weight: 400;
+  padding: 7px;
+  border-color: #1F2739;
+  letter-spacing: 3px;
+  border: 1px solid #1F2739;
+
+}
+.submitMeal:hover::before {
+  -webkit-transform: translate(50%, 0) rotate(-45deg) scale(5);
+          transform: translate(50%, 0) rotate(-45deg) scale(5);
+}
+
+
 
 .inputAddMeal {
   border-radius: 3px;
@@ -476,7 +529,8 @@ nav ul li a:hover {
   padding-left: 30px;
   padding-right: 30px;
   color: rgb(167, 161, 174);
-  height: -webkit-fill-available;
+  /*height: -webkit-fill-available;*/
+  height: 100%;
 }
 
 
@@ -528,7 +582,43 @@ nav ul li a:hover {
     letter-spacing: 3px;
     border: 1px solid #1F2739;
     color: white;
+
+
+    position: absolute;
+      text-decoration: none;
+      z-index: 1;
+      overflow: hidden;
+      left:50%;
+      transform:translate(-50%);
 }
+
+
+
+
+.payBtn:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #EDDD31;
+  z-index: -1;
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+  -webkit-transform: translate(-52%, -102%) rotate(-45deg) scale(5);
+          transform: translate(-52%, -102%) rotate(-45deg) scale(5);
+  -webkit-transition: 0.2s all ease-in;
+  transition: 0.2s all ease-in;
+}
+.payBtn:hover {
+  color: black;
+}
+.payBtn:hover::before {
+  -webkit-transform: translate(50%, 0) rotate(-45deg) scale(5);
+          transform: translate(50%, 0) rotate(-45deg) scale(5);
+}
+
 
 /* Edit/Update Meal */
 
@@ -536,6 +626,7 @@ nav ul li a:hover {
   background: #1f2739;
   font-family: 'Open Sans', sans-serif;
   text-align: center;
+  height: -webkit-fill-available;
 }
 
 .inputUpdateMeal {
@@ -561,7 +652,41 @@ nav ul li a:hover {
     letter-spacing: 2px;
     border: 1px solid #1F2739;
     color: white;
+
+    position: absolute;
+      text-decoration: none;
+      z-index: 1;
+      overflow: hidden;
+      left:50%;
+      transform:translate(-50%);
 }
+
+  .deleteYourMealBtn:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #EDDD31;
+    z-index: -1;
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+    -webkit-transform: translate(-52%, -102%) rotate(-45deg) scale(5);
+            transform: translate(-52%, -102%) rotate(-45deg) scale(5);
+    -webkit-transition: 0.2s all ease-in;
+    transition: 0.2s all ease-in;
+  }
+  .deleteYourMealBtn:hover {
+    color: black;
+  }
+  .deleteYourMealBtn:hover::before {
+    -webkit-transform: translate(50%, 0) rotate(-45deg) scale(5);
+            transform: translate(50%, 0) rotate(-45deg) scale(5);
+  }
+
+
+
 
 .updateImage {
   margin: 10px;

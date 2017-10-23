@@ -39,7 +39,7 @@ $scope.openPayment = function(name, desc) {
 $scope.totalPrice = function(getCurrentCart){
   $scope.total = 0;
   getCurrentCart.forEach(item => {
-    $scope.total += item.mealcost;
+    $scope.total += parseFloat(item.mealcost);
   })
   console.log("total:", $scope.getCurrentCart)
   return $scope.total;
