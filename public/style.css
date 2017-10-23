@@ -108,7 +108,19 @@ body {
   color: black;
   font-size: 1.5em;
 
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
 }
+
+.navColor:hover {
+  box-shadow: 2px 2px 30px 2px rgba(55, 59, 82, .8);
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: rgba(55, 59, 82, .1);
+}
+
+
 nav {
   margin: 0;
   border-radius: 0;
@@ -562,7 +574,65 @@ nav ul li a:hover {
     letter-spacing: 2px;
     border: 1px solid #1F2739;
     color: white;
+
+
+    position: absolute;
+      text-decoration: none;
+      z-index: 1;
+      overflow: hidden;
+      /*left:50%;*/
+      /*transform:translate(-50%);*/
 }
+
+.deleteFromCart:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FF4672;
+  z-index: -1;
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+  -webkit-transform: translate(-52%, -102%) rotate(-45deg) scale(5);
+          transform: translate(-52%, -102%) rotate(-45deg) scale(5);
+  -webkit-transition: 0.2s all ease-in;
+  transition: 0.2s all ease-in;
+}
+.deleteFromCart:hover {
+  color: white;
+}
+.deleteFromCart:hover::before {
+  -webkit-transform: translate(50%, 0) rotate(-45deg) scale(5);
+          transform: translate(50%, 0) rotate(-45deg) scale(5);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .checkoutCenter {
   text-align: center;
@@ -608,8 +678,8 @@ nav ul li a:hover {
           transform-origin: 50% 100%;
   -webkit-transform: translate(-52%, -102%) rotate(-45deg) scale(5);
           transform: translate(-52%, -102%) rotate(-45deg) scale(5);
-  -webkit-transition: 0.2s all ease-in;
-  transition: 0.2s all ease-in;
+  -webkit-transition: 0.25s all ease-in;
+  transition: 0.25s all ease-in;
 }
 .payBtn:hover {
   color: black;
@@ -674,8 +744,8 @@ nav ul li a:hover {
             transform-origin: 50% 100%;
     -webkit-transform: translate(-52%, -102%) rotate(-45deg) scale(5);
             transform: translate(-52%, -102%) rotate(-45deg) scale(5);
-    -webkit-transition: 0.2s all ease-in;
-    transition: 0.2s all ease-in;
+    -webkit-transition: 0.3s all ease-in;
+    transition: 0.3s all ease-in;
   }
   .deleteYourMealBtn:hover {
     color: black;
