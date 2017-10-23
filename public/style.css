@@ -228,10 +228,10 @@ nav ul li a:hover {
     text-align: center;
     width: 96%;
   }
-  /*nav h1:hover + ul,
+  nav h1:hover + ul,
   nav h1 + ul:hover {
     max-height: 300px;
-  }*/
+  }
   nav ul {
     display: block;
     max-height: 0;
