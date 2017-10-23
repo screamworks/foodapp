@@ -158,12 +158,12 @@ nav {
 
 /* NAVBAR  */
 
-/*.fixedNav {
+.fixedNav {
   position: fixed;
   width: 100%;
   margin: 0 auto;
   padding: 0;
-}*/
+}
 
 nav {
   /*background: rgba(0, 120, 187, .2);*/
@@ -228,10 +228,10 @@ nav ul li a:hover {
     text-align: center;
     width: 96%;
   }
-  nav h1:hover + ul,
+  /*nav h1:hover + ul,
   nav h1 + ul:hover {
     max-height: 300px;
-  }
+  }*/
   nav ul {
     display: block;
     max-height: 0;
