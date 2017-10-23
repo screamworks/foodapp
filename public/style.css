@@ -175,6 +175,7 @@ nav {
 
 nav h1 {
   display: none;
+  cursor: pointer;
 }
 nav ul {
   /*border-left: 1px solid #005788;*/
@@ -227,10 +228,12 @@ nav ul li a:hover {
     padding: 12px 0;
     text-align: center;
     width: 96%;
+    cursor: pointer;
   }
   nav h1:hover + ul,
   nav h1 + ul:hover {
     max-height: 300px;
+    cursor: pointer;
   }
   nav ul {
     display: block;
